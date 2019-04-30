@@ -1,5 +1,5 @@
-const ExampleContract = artifacts.require('ExampleContract');
+const ElectionContract = artifacts.require('ElectionContract');
 
-module.exports = async function(deployer) {
-  deployer.deploy(ExampleContract);
+module.exports = async deployer => {
+  deployer.deploy(ElectionContract);
 };
