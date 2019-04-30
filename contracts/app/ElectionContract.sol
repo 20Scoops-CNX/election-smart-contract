@@ -5,19 +5,6 @@ import "../permission/Ownable.sol";
 
 contract ElectionContract is StorageState, Ownable {
 
-    struct Candidate {
-        uint id;
-        string name;
-        string imageUrl;
-        uint voteCount;
-    }
-
-    mapping(address => bool) public voter;
-    mapping(uint => Candidate) public candidates;
-
-    uint public candidateCount;
-
-    event NewCandidateEvent(uint id, string name, string imageUrl);
     event VoteCandidateEvent(uint id, string name, string imageUrl, uint voteCount);
 
     modifier onlyManager() {
@@ -26,22 +13,19 @@ contract ElectionContract is StorageState, Ownable {
     }
 
     modifier requireVote(uint _candidateId) {
-        require(!(voter[msg.sender]), "This account already vote");
-        require(_candidateId > 0 && _candidateId <= candidateCount, "System not found this candidate id");
+        require(!(voterStorage.isUserVoted(msg.sender)), "This account already vote");
+        require(_candidateId > 0 && _candidateId <= candidateStorage.getCount(), "System not found this candidate id");
         _;
     }
 
     function addCandidate(string memory _name, string memory _imageUrl) public onlyManager {
-        candidateCount++;
-        Candidate memory candidate = Candidate(candidateCount, _name, _imageUrl, 0);
-        candidates[candidateCount] = candidate;
-        emit NewCandidateEvent(candidate.id, candidate.name, candidate.imageUrl);
+        candidateStorage.setCandidate(_name, _imageUrl);
     }
 
     function vote(uint _candidateId) public requireVote(_candidateId) {
-        voter[msg.sender] = true;
-        candidates[_candidateId].voteCount++;
-        Candidate memory candidate = candidates[_candidateId];
-        emit VoteCandidateEvent(candidate.id, candidate.name, candidate.imageUrl, candidate.voteCount);
+        voterStorage.setUserVote(msg.sender);
+        candidateStorage.updateVoteCount(_candidateId);
+        (uint id, string memory name, string memory imageUrl, uint voteCount) = candidateStorage.getCandidate(_candidateId);
+        emit VoteCandidateEvent(id, name, imageUrl, voteCount);
     }
 }
