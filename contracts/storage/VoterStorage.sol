@@ -18,7 +18,7 @@ contract VoterStorage {
         return users.length;
     }
 
-    function getVoter(uint index) public view returns (address) {
+    function getVoterAddress(uint index) public view returns (address) {
         return users[index];
     }
 }

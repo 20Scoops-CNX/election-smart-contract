@@ -5,6 +5,7 @@ import "../permission/Ownable.sol";
 
 contract ElectionContract is StorageState, Ownable {
 
+    event NewCandidateEvent(uint id, string name, string imageUrl);
     event VoteCandidateEvent(uint id, string name, string imageUrl, uint voteCount);
 
     modifier onlyManager() {
@@ -12,25 +13,35 @@ contract ElectionContract is StorageState, Ownable {
         _;
     }
 
-    modifier requireVote(uint _candidateId) {
-        require(!(voterStorage.isUserVoted(msg.sender)), "This account already vote");
+    modifier requireCandidate(uint _candidateId) {
         require(_candidateId > 0 && _candidateId <= candidateStorage.getCount(), "System not found this candidate id");
         _;
     }
 
+    modifier requireVote() {
+        require(!(voterStorage.isUserVoted(msg.sender)), "This account already vote");
+        _;
+    }
+
+    modifier requireVoter(uint voterId) {
+        require(voterId < voterStorage.getCountVoter(), "System not found this voter id");
+        _;
+    }
+
     function addCandidate(string memory _name, string memory _imageUrl) public onlyManager {
-        candidateStorage.setCandidate(_name, _imageUrl);
+        (uint id) = candidateStorage.setCandidate(_name, _imageUrl);
+        emit NewCandidateEvent(id, _name, _imageUrl);
     }
 
     function getTotalCandidate() public view returns (uint) {
         return candidateStorage.getCount();
     }
 
-    function getCandidate(uint id) public view returns (uint, string memory, string memory, uint) {
+    function getCandidate(uint id) public requireCandidate(id) view returns (uint, string memory, string memory, uint) {
         return candidateStorage.getCandidate(id);
     }
 
-    function vote(uint _candidateId) public requireVote(_candidateId) {
+    function vote(uint _candidateId) public requireVote() requireCandidate(_candidateId) {
         voterStorage.setUserVote(msg.sender);
         candidateStorage.updateVoteCount(_candidateId);
         (uint id, string memory name, string memory imageUrl, uint voteCount) = candidateStorage.getCandidate(_candidateId);
@@ -41,7 +52,7 @@ contract ElectionContract is StorageState, Ownable {
         return voterStorage.getCountVoter();
     }
 
-    function getVoter(uint index) public view returns (address) {
-        return voterStorage.getVoter(index);
+    function getVoter(uint id) public requireVoter(id) view returns (address) {
+        return voterStorage.getVoterAddress(id);
     }
 }

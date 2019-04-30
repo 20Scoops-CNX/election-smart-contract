@@ -13,13 +13,11 @@ contract CandidateStorage {
 
     uint private candidateCount;
 
-    event NewCandidateEvent(uint id, string name, string imageUrl);
-
-    function setCandidate(string memory _name, string memory _imageUrl) public {
+    function setCandidate(string memory _name, string memory _imageUrl) public returns (uint) {
         candidateCount++;
         Candidate memory candidate = Candidate(candidateCount, _name, _imageUrl, 0);
         candidates[candidateCount] = candidate;
-        emit NewCandidateEvent(candidate.id, candidate.name, candidate.imageUrl);
+        return candidateCount;
     }
 
     function getCandidate(uint _id) public view returns(uint, string memory, string memory, uint) {
