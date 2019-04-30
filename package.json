@@ -1,0 +1,55 @@
+{
+  "name": "election-smart-contract",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "Election Smart Contract",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/20Scoops-CNX/election-smart-contract.git"
+  },
+  "author": "Jedsada Tiwongvorakul",
+  "bugs": {
+    "url": "https://github.com/20Scoops-CNX/election-smart-contract/issues"
+  },
+  "homepage": "https://github.com/20Scoops-CNX/election-smart-contract#readme",
+  "keywords": [
+    "Election",
+    "Smart Contract"
+  ],
+  "files": [
+    "*",
+    "generators"
+  ],
+  "scripts": {
+    "start-ganache": "ganache-cli --networkId 1234567 --blockTime=0.1 -p 8545 -m \"tumble gas embody bright agree pony smoke laptop index sight shallow hungry\"",
+    "lint": "node_modules/.bin/solhint \"contracts/**/*.sol\"",
+    "test": "node_modules/.bin/truffle test --network development",
+    "test-coverage": "solidity-coverage",
+    "complie": "yarn lint && node_modules/.bin/truffle complie",
+    "deploy": "yarn lint && node_modules/.bin/truffle migrate",
+    "prettier": "prettier --write '**/*.{js,css}'",
+    "prettier:check": "prettier --list-different 'src/**/*.{js,css}'",
+    "prettier-changefiles": "pretty-quick --staged"
+  },
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "ganache-cli": "^6.4.3",
+    "truffle-hdwallet-provider": "^1.0.6",
+    "web3": "^1.0.0-beta.52"
+  },
+  "devDependencies": {
+    "solidity-coverage": "^0.5.11",
+    "solhint": "^2.0.0",
+    "truffle": "^5.0.13",
+    "truffle-assertions": "^0.8.2",
+    "husky": "^1.3.1",
+    "prettier": "^1.17.0",
+    "pretty-quick": "^1.10.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn prettier-changefiles"
+    }
+  }
+}
