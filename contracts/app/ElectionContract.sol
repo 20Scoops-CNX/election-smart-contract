@@ -22,10 +22,26 @@ contract ElectionContract is StorageState, Ownable {
         candidateStorage.setCandidate(_name, _imageUrl);
     }
 
+    function getTotalCandidate() public view returns (uint) {
+        return candidateStorage.getCount();
+    }
+
+    function getCandidate(uint id) public view returns (uint, string memory, string memory, uint) {
+        return candidateStorage.getCandidate(id);
+    }
+
     function vote(uint _candidateId) public requireVote(_candidateId) {
         voterStorage.setUserVote(msg.sender);
         candidateStorage.updateVoteCount(_candidateId);
         (uint id, string memory name, string memory imageUrl, uint voteCount) = candidateStorage.getCandidate(_candidateId);
         emit VoteCandidateEvent(id, name, imageUrl, voteCount);
+    }
+
+    function getTotalVoter() public view returns (uint total) {
+        return voterStorage.getCountVoter();
+    }
+
+    function getVoter(uint index) public view returns (address) {
+        return voterStorage.getVoter(index);
     }
 }
