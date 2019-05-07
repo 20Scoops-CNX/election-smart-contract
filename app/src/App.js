@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import { Avatar, Icon } from 'antd';
+import { Icon, Tag } from 'antd';
 import './App.css';
+import Routes from './containers/Routes';
 
 const { web3 } = window;
 
+const { CheckableTag } = Tag;
+
 class App extends Component {
   state = {
-    nextworkName: 'Unknown',
+    networkName: 'Loading...',
+    networkId: '',
     address: '',
     isMetaMask: false
   };
@@ -19,22 +23,25 @@ class App extends Component {
       web3.version.getNetwork((err, netId) => {
         switch (netId) {
           case '1':
-            this.setState({ nextworkName: 'Mainnet' });
+            this.setState({ networkName: 'Mainnet', networkId: netId });
             break;
           case '3':
-            this.setState({ nextworkName: 'Ropsten' });
+            this.setState({ networkName: 'Ropsten', networkId: netId });
             break;
           case '4':
-            this.setState({ nextworkName: 'Rinkeby' });
+            this.setState({ networkName: 'Rinkeby', networkId: netId });
+            break;
+          case '5':
+            this.setState({ networkName: 'Goerli', networkId: netId });
             break;
           case '42':
-            this.setState({ nextworkName: 'Kovan' });
+            this.setState({ networkName: 'Kovan', networkId: netId });
             break;
           case '1234567':
-            this.setState({ nextworkName: 'Localhost' });
+            this.setState({ networkName: 'Localhost', networkId: netId });
             break;
           default:
-            this.setState({ nextworkName: 'Unknown' });
+            this.setState({ networkName: 'Unknown', networkId: netId });
         }
       });
 
@@ -69,19 +76,30 @@ class App extends Component {
             <div
               style={{
                 height: '46px',
-                background: '#E04447',
+                background: 'black',
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center'
               }}
             >
-              <Avatar
-                style={{ height: '46px', marginLeft: '16px' }}
-                src="20scoops_icon.png"
-              />
-              <Icon name="signal" /> Network{' '}
-              <div>{this.state.nextworkName}</div>
+              <div
+                style={{
+                  height: '56px',
+                  marginLeft: '16px',
+                  color: 'white',
+                  fontSize: '24px',
+                  marginTop: '15px'
+                }}
+              >
+                Election
+              </div>
+              <CheckableTag checked={true}>
+                <div style={{ padding: '3px', fontSize: '12px' }}>
+                  <Icon type="api" /> Network: {this.state.networkName}
+                </div>
+              </CheckableTag>
             </div>
+            <Routes />
           </div>
         ) : (
           <div
