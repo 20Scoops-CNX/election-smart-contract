@@ -7,7 +7,7 @@ function getProvider(networkUrl) {
 }
 
 module.exports = {
-  contracts_build_directory: path.join(__dirname, 'build'),
+  contracts_build_directory: path.join(__dirname, 'app/src/contracts'),
   solc: {
     optimizer: {
       enabled: true,
