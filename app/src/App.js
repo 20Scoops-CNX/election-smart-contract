@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Icon, Tag } from 'antd';
 import './App.css';
 import Routes from './containers/Routes';
+import Contract from './services/Contract';
 
 const { web3 } = window;
 
@@ -15,7 +16,8 @@ class App extends Component {
     isMetaMask: false
   };
 
-  componentDidMount() {
+  async componentDidMount() {
+    Contract.registerBus();
     if (!web3) return;
 
     if (web3.currentProvider.isMetaMask) {
@@ -59,6 +61,10 @@ class App extends Component {
     } else {
       this.setState({ isMetaMask: false });
     }
+  }
+
+  componentWillUnmount() {
+    Contract.unregisterBus();
   }
 
   onNavigateToInstallMetaMask = () => {

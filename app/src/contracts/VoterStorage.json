@@ -82,13 +82,13 @@
   "ast": {
     "absolutePath": "/Users/jedsada/Documents/development/election-smart-contract/contracts/storage/VoterStorage.sol",
     "exportedSymbols": {
-      "VoterStorage": [580]
+      "VoterStorage": [638]
     },
-    "id": 581,
+    "id": 639,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 521,
+        "id": 579,
         "literals": ["solidity", ">=", "0.4", ".24", "<", "0.6", ".0"],
         "nodeType": "PragmaDirective",
         "src": "0:32:6"
@@ -99,17 +99,17 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 580,
-        "linearizedBaseContracts": [580],
+        "id": 638,
+        "linearizedBaseContracts": [638],
         "name": "VoterStorage",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 525,
+            "id": 583,
             "name": "voter",
             "nodeType": "VariableDeclaration",
-            "scope": 580,
+            "scope": 638,
             "src": "63:38:6",
             "stateVariable": true,
             "storageLocation": "default",
@@ -118,9 +118,9 @@
               "typeString": "mapping(address => bool)"
             },
             "typeName": {
-              "id": 524,
+              "id": 582,
               "keyType": {
-                "id": 522,
+                "id": 580,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "71:7:6",
@@ -136,7 +136,7 @@
                 "typeString": "mapping(address => bool)"
               },
               "valueType": {
-                "id": 523,
+                "id": 581,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "82:4:6",
@@ -151,10 +151,10 @@
           },
           {
             "constant": false,
-            "id": 528,
+            "id": 586,
             "name": "users",
             "nodeType": "VariableDeclaration",
-            "scope": 580,
+            "scope": 638,
             "src": "107:23:6",
             "stateVariable": true,
             "storageLocation": "default",
@@ -164,7 +164,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 526,
+                "id": 584,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "107:7:6",
@@ -174,7 +174,7 @@
                   "typeString": "address"
                 }
               },
-              "id": 527,
+              "id": 585,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "107:9:6",
@@ -188,14 +188,14 @@
           },
           {
             "body": {
-              "id": 545,
+              "id": 603,
               "nodeType": "Block",
               "src": "183:69:6",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 537,
+                    "id": 595,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -204,25 +204,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 533,
+                        "id": 591,
                         "name": "voter",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 525,
+                        "referencedDeclaration": 583,
                         "src": "193:5:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                           "typeString": "mapping(address => bool)"
                         }
                       },
-                      "id": 535,
+                      "id": 593,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 534,
+                        "id": 592,
                         "name": "_address",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 530,
+                        "referencedDeclaration": 588,
                         "src": "199:8:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -245,7 +245,7 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "74727565",
-                      "id": 536,
+                      "id": 594,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -266,7 +266,7 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 538,
+                  "id": 596,
                   "nodeType": "ExpressionStatement",
                   "src": "193:22:6"
                 },
@@ -276,11 +276,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 542,
+                        "id": 600,
                         "name": "_address",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 530,
+                        "referencedDeclaration": 588,
                         "src": "236:8:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -297,18 +297,18 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 539,
+                        "id": 597,
                         "name": "users",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 528,
+                        "referencedDeclaration": 586,
                         "src": "225:5:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage",
                           "typeString": "address[] storage ref"
                         }
                       },
-                      "id": 541,
+                      "id": 599,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -322,7 +322,7 @@
                         "typeString": "function (address) returns (uint256)"
                       }
                     },
-                    "id": 543,
+                    "id": 601,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -336,29 +336,29 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 544,
+                  "id": 602,
                   "nodeType": "ExpressionStatement",
                   "src": "225:20:6"
                 }
               ]
             },
             "documentation": null,
-            "id": 546,
+            "id": 604,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "setUserVote",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 531,
+              "id": 589,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 530,
+                  "id": 588,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 546,
+                  "scope": 604,
                   "src": "158:16:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -367,7 +367,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 529,
+                    "id": 587,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "158:7:6",
@@ -384,12 +384,12 @@
               "src": "157:18:6"
             },
             "returnParameters": {
-              "id": 532,
+              "id": 590,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "183:0:6"
             },
-            "scope": 580,
+            "scope": 638,
             "src": "137:115:6",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -397,7 +397,7 @@
           },
           {
             "body": {
-              "id": 557,
+              "id": 615,
               "nodeType": "Block",
               "src": "324:39:6",
               "statements": [
@@ -406,25 +406,25 @@
                     "argumentTypes": null,
                     "baseExpression": {
                       "argumentTypes": null,
-                      "id": 553,
+                      "id": 611,
                       "name": "voter",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 525,
+                      "referencedDeclaration": 583,
                       "src": "341:5:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                         "typeString": "mapping(address => bool)"
                       }
                     },
-                    "id": 555,
+                    "id": 613,
                     "indexExpression": {
                       "argumentTypes": null,
-                      "id": 554,
+                      "id": 612,
                       "name": "_address",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 548,
+                      "referencedDeclaration": 606,
                       "src": "347:8:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -442,30 +442,30 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 552,
-                  "id": 556,
+                  "functionReturnParameters": 610,
+                  "id": 614,
                   "nodeType": "Return",
                   "src": "334:22:6"
                 }
               ]
             },
             "documentation": null,
-            "id": 558,
+            "id": 616,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "isUserVoted",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 549,
+              "id": 607,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 548,
+                  "id": 606,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 558,
+                  "scope": 616,
                   "src": "279:16:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -474,7 +474,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 547,
+                    "id": 605,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "279:7:6",
@@ -491,15 +491,15 @@
               "src": "278:18:6"
             },
             "returnParameters": {
-              "id": 552,
+              "id": 610,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 551,
+                  "id": 609,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 558,
+                  "scope": 616,
                   "src": "318:4:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -508,7 +508,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 550,
+                    "id": 608,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "318:4:6",
@@ -523,7 +523,7 @@
               ],
               "src": "317:6:6"
             },
-            "scope": 580,
+            "scope": 638,
             "src": "258:105:6",
             "stateMutability": "view",
             "superFunction": null,
@@ -531,7 +531,7 @@
           },
           {
             "body": {
-              "id": 566,
+              "id": 624,
               "nodeType": "Block",
               "src": "421:36:6",
               "statements": [
@@ -540,18 +540,18 @@
                     "argumentTypes": null,
                     "expression": {
                       "argumentTypes": null,
-                      "id": 563,
+                      "id": 621,
                       "name": "users",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 528,
+                      "referencedDeclaration": 586,
                       "src": "438:5:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_storage",
                         "typeString": "address[] storage ref"
                       }
                     },
-                    "id": 564,
+                    "id": 622,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
@@ -565,36 +565,36 @@
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 562,
-                  "id": 565,
+                  "functionReturnParameters": 620,
+                  "id": 623,
                   "nodeType": "Return",
                   "src": "431:19:6"
                 }
               ]
             },
             "documentation": null,
-            "id": 567,
+            "id": 625,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getCountVoter",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 559,
+              "id": 617,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "391:2:6"
             },
             "returnParameters": {
-              "id": 562,
+              "id": 620,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 561,
+                  "id": 619,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 567,
+                  "scope": 625,
                   "src": "415:4:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -603,7 +603,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 560,
+                    "id": 618,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "415:4:6",
@@ -618,7 +618,7 @@
               ],
               "src": "414:6:6"
             },
-            "scope": 580,
+            "scope": 638,
             "src": "369:88:6",
             "stateMutability": "view",
             "superFunction": null,
@@ -626,7 +626,7 @@
           },
           {
             "body": {
-              "id": 578,
+              "id": 636,
               "nodeType": "Block",
               "src": "530:36:6",
               "statements": [
@@ -635,25 +635,25 @@
                     "argumentTypes": null,
                     "baseExpression": {
                       "argumentTypes": null,
-                      "id": 574,
+                      "id": 632,
                       "name": "users",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 528,
+                      "referencedDeclaration": 586,
                       "src": "547:5:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_storage",
                         "typeString": "address[] storage ref"
                       }
                     },
-                    "id": 576,
+                    "id": 634,
                     "indexExpression": {
                       "argumentTypes": null,
-                      "id": 575,
+                      "id": 633,
                       "name": "index",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 569,
+                      "referencedDeclaration": 627,
                       "src": "553:5:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -671,30 +671,30 @@
                       "typeString": "address"
                     }
                   },
-                  "functionReturnParameters": 573,
-                  "id": 577,
+                  "functionReturnParameters": 631,
+                  "id": 635,
                   "nodeType": "Return",
                   "src": "540:19:6"
                 }
               ]
             },
             "documentation": null,
-            "id": 579,
+            "id": 637,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getVoterAddress",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 570,
+              "id": 628,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 569,
+                  "id": 627,
                   "name": "index",
                   "nodeType": "VariableDeclaration",
-                  "scope": 579,
+                  "scope": 637,
                   "src": "488:10:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -703,7 +703,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 568,
+                    "id": 626,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "488:4:6",
@@ -719,15 +719,15 @@
               "src": "487:12:6"
             },
             "returnParameters": {
-              "id": 573,
+              "id": 631,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 572,
+                  "id": 630,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 579,
+                  "scope": 637,
                   "src": "521:7:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -736,7 +736,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 571,
+                    "id": 629,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "521:7:6",
@@ -752,14 +752,14 @@
               ],
               "src": "520:9:6"
             },
-            "scope": 580,
+            "scope": 638,
             "src": "463:103:6",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 581,
+        "scope": 639,
         "src": "34:534:6"
       }
     ],
@@ -768,13 +768,13 @@
   "legacyAST": {
     "absolutePath": "/Users/jedsada/Documents/development/election-smart-contract/contracts/storage/VoterStorage.sol",
     "exportedSymbols": {
-      "VoterStorage": [580]
+      "VoterStorage": [638]
     },
-    "id": 581,
+    "id": 639,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 521,
+        "id": 579,
         "literals": ["solidity", ">=", "0.4", ".24", "<", "0.6", ".0"],
         "nodeType": "PragmaDirective",
         "src": "0:32:6"
@@ -785,17 +785,17 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 580,
-        "linearizedBaseContracts": [580],
+        "id": 638,
+        "linearizedBaseContracts": [638],
         "name": "VoterStorage",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 525,
+            "id": 583,
             "name": "voter",
             "nodeType": "VariableDeclaration",
-            "scope": 580,
+            "scope": 638,
             "src": "63:38:6",
             "stateVariable": true,
             "storageLocation": "default",
@@ -804,9 +804,9 @@
               "typeString": "mapping(address => bool)"
             },
             "typeName": {
-              "id": 524,
+              "id": 582,
               "keyType": {
-                "id": 522,
+                "id": 580,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "71:7:6",
@@ -822,7 +822,7 @@
                 "typeString": "mapping(address => bool)"
               },
               "valueType": {
-                "id": 523,
+                "id": 581,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "82:4:6",
@@ -837,10 +837,10 @@
           },
           {
             "constant": false,
-            "id": 528,
+            "id": 586,
             "name": "users",
             "nodeType": "VariableDeclaration",
-            "scope": 580,
+            "scope": 638,
             "src": "107:23:6",
             "stateVariable": true,
             "storageLocation": "default",
@@ -850,7 +850,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 526,
+                "id": 584,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "107:7:6",
@@ -860,7 +860,7 @@
                   "typeString": "address"
                 }
               },
-              "id": 527,
+              "id": 585,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "107:9:6",
@@ -874,14 +874,14 @@
           },
           {
             "body": {
-              "id": 545,
+              "id": 603,
               "nodeType": "Block",
               "src": "183:69:6",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 537,
+                    "id": 595,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -890,25 +890,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 533,
+                        "id": 591,
                         "name": "voter",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 525,
+                        "referencedDeclaration": 583,
                         "src": "193:5:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                           "typeString": "mapping(address => bool)"
                         }
                       },
-                      "id": 535,
+                      "id": 593,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 534,
+                        "id": 592,
                         "name": "_address",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 530,
+                        "referencedDeclaration": 588,
                         "src": "199:8:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -931,7 +931,7 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "74727565",
-                      "id": 536,
+                      "id": 594,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -952,7 +952,7 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 538,
+                  "id": 596,
                   "nodeType": "ExpressionStatement",
                   "src": "193:22:6"
                 },
@@ -962,11 +962,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 542,
+                        "id": 600,
                         "name": "_address",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 530,
+                        "referencedDeclaration": 588,
                         "src": "236:8:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -983,18 +983,18 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 539,
+                        "id": 597,
                         "name": "users",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 528,
+                        "referencedDeclaration": 586,
                         "src": "225:5:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage",
                           "typeString": "address[] storage ref"
                         }
                       },
-                      "id": 541,
+                      "id": 599,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1008,7 +1008,7 @@
                         "typeString": "function (address) returns (uint256)"
                       }
                     },
-                    "id": 543,
+                    "id": 601,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1022,29 +1022,29 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 544,
+                  "id": 602,
                   "nodeType": "ExpressionStatement",
                   "src": "225:20:6"
                 }
               ]
             },
             "documentation": null,
-            "id": 546,
+            "id": 604,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "setUserVote",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 531,
+              "id": 589,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 530,
+                  "id": 588,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 546,
+                  "scope": 604,
                   "src": "158:16:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1053,7 +1053,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 529,
+                    "id": 587,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "158:7:6",
@@ -1070,12 +1070,12 @@
               "src": "157:18:6"
             },
             "returnParameters": {
-              "id": 532,
+              "id": 590,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "183:0:6"
             },
-            "scope": 580,
+            "scope": 638,
             "src": "137:115:6",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1083,7 +1083,7 @@
           },
           {
             "body": {
-              "id": 557,
+              "id": 615,
               "nodeType": "Block",
               "src": "324:39:6",
               "statements": [
@@ -1092,25 +1092,25 @@
                     "argumentTypes": null,
                     "baseExpression": {
                       "argumentTypes": null,
-                      "id": 553,
+                      "id": 611,
                       "name": "voter",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 525,
+                      "referencedDeclaration": 583,
                       "src": "341:5:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                         "typeString": "mapping(address => bool)"
                       }
                     },
-                    "id": 555,
+                    "id": 613,
                     "indexExpression": {
                       "argumentTypes": null,
-                      "id": 554,
+                      "id": 612,
                       "name": "_address",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 548,
+                      "referencedDeclaration": 606,
                       "src": "347:8:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -1128,30 +1128,30 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 552,
-                  "id": 556,
+                  "functionReturnParameters": 610,
+                  "id": 614,
                   "nodeType": "Return",
                   "src": "334:22:6"
                 }
               ]
             },
             "documentation": null,
-            "id": 558,
+            "id": 616,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "isUserVoted",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 549,
+              "id": 607,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 548,
+                  "id": 606,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 558,
+                  "scope": 616,
                   "src": "279:16:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1160,7 +1160,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 547,
+                    "id": 605,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "279:7:6",
@@ -1177,15 +1177,15 @@
               "src": "278:18:6"
             },
             "returnParameters": {
-              "id": 552,
+              "id": 610,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 551,
+                  "id": 609,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 558,
+                  "scope": 616,
                   "src": "318:4:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1194,7 +1194,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 550,
+                    "id": 608,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "318:4:6",
@@ -1209,7 +1209,7 @@
               ],
               "src": "317:6:6"
             },
-            "scope": 580,
+            "scope": 638,
             "src": "258:105:6",
             "stateMutability": "view",
             "superFunction": null,
@@ -1217,7 +1217,7 @@
           },
           {
             "body": {
-              "id": 566,
+              "id": 624,
               "nodeType": "Block",
               "src": "421:36:6",
               "statements": [
@@ -1226,18 +1226,18 @@
                     "argumentTypes": null,
                     "expression": {
                       "argumentTypes": null,
-                      "id": 563,
+                      "id": 621,
                       "name": "users",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 528,
+                      "referencedDeclaration": 586,
                       "src": "438:5:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_storage",
                         "typeString": "address[] storage ref"
                       }
                     },
-                    "id": 564,
+                    "id": 622,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
@@ -1251,36 +1251,36 @@
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 562,
-                  "id": 565,
+                  "functionReturnParameters": 620,
+                  "id": 623,
                   "nodeType": "Return",
                   "src": "431:19:6"
                 }
               ]
             },
             "documentation": null,
-            "id": 567,
+            "id": 625,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getCountVoter",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 559,
+              "id": 617,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "391:2:6"
             },
             "returnParameters": {
-              "id": 562,
+              "id": 620,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 561,
+                  "id": 619,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 567,
+                  "scope": 625,
                   "src": "415:4:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1289,7 +1289,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 560,
+                    "id": 618,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "415:4:6",
@@ -1304,7 +1304,7 @@
               ],
               "src": "414:6:6"
             },
-            "scope": 580,
+            "scope": 638,
             "src": "369:88:6",
             "stateMutability": "view",
             "superFunction": null,
@@ -1312,7 +1312,7 @@
           },
           {
             "body": {
-              "id": 578,
+              "id": 636,
               "nodeType": "Block",
               "src": "530:36:6",
               "statements": [
@@ -1321,25 +1321,25 @@
                     "argumentTypes": null,
                     "baseExpression": {
                       "argumentTypes": null,
-                      "id": 574,
+                      "id": 632,
                       "name": "users",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 528,
+                      "referencedDeclaration": 586,
                       "src": "547:5:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_storage",
                         "typeString": "address[] storage ref"
                       }
                     },
-                    "id": 576,
+                    "id": 634,
                     "indexExpression": {
                       "argumentTypes": null,
-                      "id": 575,
+                      "id": 633,
                       "name": "index",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 569,
+                      "referencedDeclaration": 627,
                       "src": "553:5:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1357,30 +1357,30 @@
                       "typeString": "address"
                     }
                   },
-                  "functionReturnParameters": 573,
-                  "id": 577,
+                  "functionReturnParameters": 631,
+                  "id": 635,
                   "nodeType": "Return",
                   "src": "540:19:6"
                 }
               ]
             },
             "documentation": null,
-            "id": 579,
+            "id": 637,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getVoterAddress",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 570,
+              "id": 628,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 569,
+                  "id": 627,
                   "name": "index",
                   "nodeType": "VariableDeclaration",
-                  "scope": 579,
+                  "scope": 637,
                   "src": "488:10:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1389,7 +1389,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 568,
+                    "id": 626,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "488:4:6",
@@ -1405,15 +1405,15 @@
               "src": "487:12:6"
             },
             "returnParameters": {
-              "id": 573,
+              "id": 631,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 572,
+                  "id": 630,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 579,
+                  "scope": 637,
                   "src": "521:7:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1422,7 +1422,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 571,
+                    "id": 629,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "521:7:6",
@@ -1438,14 +1438,14 @@
               ],
               "src": "520:9:6"
             },
-            "scope": 580,
+            "scope": 638,
             "src": "463:103:6",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 581,
+        "scope": 639,
         "src": "34:534:6"
       }
     ],
@@ -1459,12 +1459,12 @@
     "1234567": {
       "events": {},
       "links": {},
-      "address": "0xc32747eCa2BfD8520b221549AAeC8937bE149915",
-      "transactionHash": "0x1d490fa4ebff59620c85f4fd6e7ee1d25367e8f078fad57250d82f3c04c3782b"
+      "address": "0x735d90D43BC396c8B5759aC1D8A758ef0fBBCe88",
+      "transactionHash": "0x7e1746d21cf9412a56a840067e394af627e0c060951e1c9235101a9bbdfdc7a7"
     }
   },
   "schemaVersion": "3.0.6",
-  "updatedAt": "2019-05-07T15:46:31.289Z",
+  "updatedAt": "2019-05-09T04:11:46.074Z",
   "devdoc": {
     "methods": {}
   },

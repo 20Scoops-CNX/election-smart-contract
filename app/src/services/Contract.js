@@ -1,5 +1,7 @@
 import * as proxyConfig from '../contracts/App.json';
 import * as electionConfig from '../contracts/ElectionContract.json';
+import Web3 from 'web3';
+import EventBus from 'eventbusjs';
 
 let Election = null;
 let selectedNetwork = null;
@@ -10,11 +12,30 @@ export default class Contract {
     throw new Error('Do not instantiate!');
   }
 
+  static handlerNetworkIdChange = event => {
+    console.log(event);
+    this.setNetwork(event.target);
+  };
+
+  static registerBus = () => {
+    EventBus.addEventListener(
+      'NetworkIdChangeEvent',
+      this.handlerNetworkIdChange
+    );
+  };
+
+  static unregisterBus = () => {
+    EventBus.removeEventListener(
+      'NetworkIdChangeEvent',
+      this.handlerNetworkIdChange
+    );
+  };
+
   static getSupportedNetworks = () => {
     return supportedNetworks;
   };
 
-  static setNetwork = networkId => {
+  static setNetwork = async networkId => {
     if (supportedNetworks.indexOf(networkId) < 0) {
       throw new Error(
         `No configuration defined for network:${networkId}. Application supports only ${supportedNetworks.join(
@@ -23,28 +44,31 @@ export default class Contract {
       );
     }
     selectedNetwork = networkId;
-    let { web3 } = window;
+
+    const web3 = new Web3(window.web3.currentProvider);
+    const accounts = await web3.eth.getAccounts();
+    web3.eth.defaultAccount = accounts[0];
 
     // initialize contracts
     const appAddress = electionConfig.networks[selectedNetwork].address;
     const proxyAddress = proxyConfig.networks[selectedNetwork].address;
 
     // fist time only
-    const instanceProxy = web3.eth.contract(proxyConfig.abi).at(proxyAddress);
+    const instanceProxy = await new web3.eth.Contract(
+      proxyConfig.abi,
+      proxyAddress
+    );
 
-    instanceProxy.implementation((err, addressImpl) => {
-      if (!err) {
-        if (addressImpl.toLowerCase() !== appAddress.toLowerCase()) {
-          instanceProxy.upgradeTo(appAddress, (err, res) => {
-            if (!err) {
-              console.log('upgrade contract successfully');
-            }
-          });
-        }
-      }
-    });
+    const addressImpl = await instanceProxy.methods.implementation().call();
+    console.log(`address impl: ${addressImpl.toLowerCase()}`);
+    console.log(`address app: ${appAddress.toLowerCase()}`);
+    if (addressImpl.toLowerCase() !== appAddress.toLowerCase()) {
+      await instanceProxy.methods
+        .upgradeTo(appAddress)
+        .send({ from: accounts[0] });
+    }
 
-    Election = web3.eth.contract(electionConfig.abi).at(proxyAddress);
+    Election = await new web3.eth.Contract(electionConfig.abi, proxyAddress);
   };
 
   static Election() {

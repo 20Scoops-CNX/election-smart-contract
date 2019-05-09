@@ -16,6 +16,8 @@ contract('ElectionContract', accounts => {
   it('add Donald Trump to candidate from owner should be success', async () => {
     const tx = await app.addCandidate(
       'Donald Trump',
+      'party name',
+      'party logo',
       'http://www.gstatic.com/tv/thumb/persons/1805/1805_v9_bb.jpg'
     );
     assert.ok(tx);
@@ -26,6 +28,8 @@ contract('ElectionContract', accounts => {
     try {
       await await app.addCandidate(
         'Donald Trump',
+        'party name',
+        'party logo',
         'http://www.gstatic.com/tv/thumb/persons/1805/1805_v9_bb.jpg',
         { from: accounts[1] }
       );
@@ -60,6 +64,11 @@ contract('ElectionContract', accounts => {
     const tx = await app.vote(1);
     assert.ok(tx);
     truffleAssert.eventEmitted(tx, 'VoteCandidateEvent');
+  });
+
+  it('account 1 can not vote should be success', async () => {
+    const canVote = await app.checkUserCanVote();
+    assert.equal(canVote, false);
   });
 
   it('vote Barack Obama from account 1 should be error', async () => {

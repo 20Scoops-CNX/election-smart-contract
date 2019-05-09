@@ -23,7 +23,7 @@ module.exports = {
       host: 'localhost',
       port: 8545,
       network_id: '*',
-      from: '0xd77c534aed04d7ce34cd425073a033db4fbe6a9d'
+      from: '0x5340791a973b9a2261442da715a05dc35d7fc642'
     },
     production: {
       provider: () => getProvider(process.env.MAINNET_URL),
@@ -50,6 +50,13 @@ module.exports = {
     kovan: {
       provider: () => getProvider(process.env.KOVAN_URL),
       network_id: '42',
+      from: process.env.ADDRESS_DEPLOY,
+      confirmations: 2,
+      websockets: true
+    },
+    goerli: {
+      provider: () => getProvider(process.env.GOERLI_URL),
+      network_id: '5',
       from: process.env.ADDRESS_DEPLOY,
       confirmations: 2,
       websockets: true

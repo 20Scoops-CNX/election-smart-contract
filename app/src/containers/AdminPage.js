@@ -1,28 +1,39 @@
 import React, { Component } from 'react';
-import { Form, Input, Icon, Button } from 'antd';
+import { Form, Input, Icon, Button, message } from 'antd';
 import Contract from '../services/Contract';
 
 class AdminPage extends Component {
   state = {
     isLoading: false,
     name: '',
+    politicalPartyName: '',
+    logoUrl: '',
     imageUrl: ''
   };
 
-  componentDidMount() {
-    Contract.setNetwork('1234567');
+  async componentDidMount() {
+    await Contract.setNetwork('1234567');
     this.election = Contract.Election();
   }
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
-    this.election.addCandidate(
-      this.state.name,
-      this.state.imageUrl,
-      (err, res) => {
-        console.log(res);
-      }
-    );
+    this.setState({ isLoading: true });
+    try {
+      const tx = await this.election.methods
+        .addCandidate(
+          this.state.name,
+          this.state.politicalPartyName,
+          this.state.logoUrl,
+          this.state.imageUrl
+        )
+        .send();
+      this.setState({ isLoading: false });
+      message.success(tx.transactionHash);
+    } catch (err) {
+      this.setState({ isLoading: false });
+      message.error(err.message);
+    }
   };
 
   onNameChange = e => {
@@ -33,31 +44,68 @@ class AdminPage extends Component {
     this.setState({ imageUrl: e.target.value });
   };
 
+  onPoliticalPartyNameChange = e => {
+    this.setState({ politicalPartyName: e.target.value });
+  };
+
+  onLogoUrlChange = e => {
+    this.setState({ logoUrl: e.target.value });
+  };
+
   render() {
     return (
-      <div style={{ justifyContent: 'center', display: 'flex' }}>
-        <h2>Create Candidate</h2>
+      <div
+        style={{ justifyContent: 'center', display: 'flex', flexWrap: 'wrap' }}
+      >
+        <h1 style={{ width: '100%', textAlign: 'center', marginTop: '30px' }}>
+          Create Candidate
+        </h1>
         <Form
           onSubmit={this.handleSubmit}
           className="login-form"
-          style={{ width: '50%', marginTop: '30px' }}
+          style={{ width: '35%' }}
         >
           <Form.Item>
             <Input
               prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
               placeholder="Name"
+              value={this.state.name}
               onChange={this.onNameChange}
             />
           </Form.Item>
           <Form.Item>
             <Input
-              prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-              placeholder="Image URL"
-              onChange={this.onImageUrlChange}
+              prefix={
+                <Icon type="crown" style={{ color: 'rgba(0,0,0,.25)' }} />
+              }
+              placeholder="Political Party Name"
+              value={this.state.politicalPartyName}
+              onChange={this.onPoliticalPartyNameChange}
             />
           </Form.Item>
           <Form.Item>
+            <Input
+              prefix={
+                <Icon type="picture" style={{ color: 'rgba(0,0,0,.25)' }} />
+              }
+              placeholder="Logo URL"
+              value={this.state.logoUrl}
+              onChange={this.onLogoUrlChange}
+            />
+          </Form.Item>
+          <Form.Item>
+            <Input
+              prefix={
+                <Icon type="picture" style={{ color: 'rgba(0,0,0,.25)' }} />
+              }
+              placeholder="Image URL"
+              value={this.state.imageUrl}
+              onChange={this.onImageUrlChange}
+            />
+          </Form.Item>
+          <Form.Item style={{ textAlign: 'center' }}>
             <Button
+              style={{ width: '40%' }}
               loading={this.state.isLoading}
               type="primary"
               htmlType="submit"

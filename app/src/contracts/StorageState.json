@@ -30,9 +30,9 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"voterStorage\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"candidateStorage\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/jedsada/Documents/development/election-smart-contract/contracts/state/StorageState.sol\":\"StorageState\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":2000},\"remappings\":[]},\"sources\":{\"/Users/jedsada/Documents/development/election-smart-contract/contracts/state/StorageState.sol\":{\"keccak256\":\"0x3e1d841005ed3ac90ae783caf6b650f0edaf13e7ccfff1ba7894798e60edd6df\",\"urls\":[\"bzzr://08bf076b024abebb3483226f2f8a4b6fe8768a1736ff9856f2b78bf898de663f\"]},\"/Users/jedsada/Documents/development/election-smart-contract/contracts/storage/CandidateStorage.sol\":{\"keccak256\":\"0xeb05b0132b632cfb6e77bf806b27ca5f2a3129098208bb054130b6938519787c\",\"urls\":[\"bzzr://1ceb0859e60f0ce4025938d4389d0eaa34b304a5ed970c683b06ebceaaaec148\"]},\"/Users/jedsada/Documents/development/election-smart-contract/contracts/storage/VoterStorage.sol\":{\"keccak256\":\"0x0d8c8fd2509d68f7989f8614a5730cf0331db72088d1fe87eb2b3b1c823600f7\",\"urls\":[\"bzzr://2c8150e9e3af7bf8353457cff48e6656bdade932e6f918275bb2dace27354de8\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5060fe8061001f6000396000f3fe60806040526004361060485763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166395c562cb8114604d5780639de5d621146088575b600080fd5b348015605857600080fd5b50605f609a565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b348015609357600080fd5b50605f60b6565b60015473ffffffffffffffffffffffffffffffffffffffff1681565b60005473ffffffffffffffffffffffffffffffffffffffff168156fea165627a7a72305820e1afeb60c17c9571ceb0269e4a4c73c90f93ed0f76dfaba4ad6af3f77712e2dc0029",
-  "deployedBytecode": "0x60806040526004361060485763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166395c562cb8114604d5780639de5d621146088575b600080fd5b348015605857600080fd5b50605f609a565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b348015609357600080fd5b50605f60b6565b60015473ffffffffffffffffffffffffffffffffffffffff1681565b60005473ffffffffffffffffffffffffffffffffffffffff168156fea165627a7a72305820e1afeb60c17c9571ceb0269e4a4c73c90f93ed0f76dfaba4ad6af3f77712e2dc0029",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"voterStorage\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"candidateStorage\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/jedsada/Documents/development/election-smart-contract/contracts/state/StorageState.sol\":\"StorageState\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":2000},\"remappings\":[]},\"sources\":{\"/Users/jedsada/Documents/development/election-smart-contract/contracts/state/StorageState.sol\":{\"keccak256\":\"0x3e1d841005ed3ac90ae783caf6b650f0edaf13e7ccfff1ba7894798e60edd6df\",\"urls\":[\"bzzr://08bf076b024abebb3483226f2f8a4b6fe8768a1736ff9856f2b78bf898de663f\"]},\"/Users/jedsada/Documents/development/election-smart-contract/contracts/storage/CandidateStorage.sol\":{\"keccak256\":\"0x6644504ec1544c39c253409f24972a95071d4323d1bd954faa5050cf8263aa85\",\"urls\":[\"bzzr://46e1fcbc8bcc801995c6f46348188a63624152955cb5097225ec5df5af77f615\"]},\"/Users/jedsada/Documents/development/election-smart-contract/contracts/storage/VoterStorage.sol\":{\"keccak256\":\"0x0d8c8fd2509d68f7989f8614a5730cf0331db72088d1fe87eb2b3b1c823600f7\",\"urls\":[\"bzzr://2c8150e9e3af7bf8353457cff48e6656bdade932e6f918275bb2dace27354de8\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060fe8061001f6000396000f3fe60806040526004361060485763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166395c562cb8114604d5780639de5d621146088575b600080fd5b348015605857600080fd5b50605f609a565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b348015609357600080fd5b50605f60b6565b60015473ffffffffffffffffffffffffffffffffffffffff1681565b60005473ffffffffffffffffffffffffffffffffffffffff168156fea165627a7a7230582004ae750f1875b9de6c6015c999c5613e2522359dfbd296f7387658643394757d0029",
+  "deployedBytecode": "0x60806040526004361060485763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166395c562cb8114604d5780639de5d621146088575b600080fd5b348015605857600080fd5b50605f609a565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b348015609357600080fd5b50605f60b6565b60015473ffffffffffffffffffffffffffffffffffffffff1681565b60005473ffffffffffffffffffffffffffffffffffffffff168156fea165627a7a7230582004ae750f1875b9de6c6015c999c5613e2522359dfbd296f7387658643394757d0029",
   "sourceMap": "115:109:4:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;115:109:4;;;;;;;",
   "deployedSourceMap": "115:109:4:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;189:32;;8:9:-1;5:2;;;30:1;27;20:12;5:2;189:32:4;;;;;;;;;;;;;;;;;;;;;;;143:40;;8:9:-1;5:2;;;30:1;27;20:12;5:2;143:40:4;;;;189:32;;;;;;:::o;143:40::-;;;;;;:::o",
   "source": "pragma solidity >=0.4.24 <0.6.0;\n\nimport \"../storage/CandidateStorage.sol\";\nimport \"../storage/VoterStorage.sol\";\n\ncontract StorageState {\n    CandidateStorage public candidateStorage;\n    VoterStorage public voterStorage;\n}",
@@ -40,13 +40,13 @@
   "ast": {
     "absolutePath": "/Users/jedsada/Documents/development/election-smart-contract/contracts/state/StorageState.sol",
     "exportedSymbols": {
-      "StorageState": [421]
+      "StorageState": [461]
     },
-    "id": 422,
+    "id": 462,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 414,
+        "id": 454,
         "literals": ["solidity", ">=", "0.4", ".24", "<", "0.6", ".0"],
         "nodeType": "PragmaDirective",
         "src": "0:32:4"
@@ -54,10 +54,10 @@
       {
         "absolutePath": "/Users/jedsada/Documents/development/election-smart-contract/contracts/storage/CandidateStorage.sol",
         "file": "../storage/CandidateStorage.sol",
-        "id": 415,
+        "id": 455,
         "nodeType": "ImportDirective",
-        "scope": 422,
-        "sourceUnit": 520,
+        "scope": 462,
+        "sourceUnit": 578,
         "src": "34:41:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -65,10 +65,10 @@
       {
         "absolutePath": "/Users/jedsada/Documents/development/election-smart-contract/contracts/storage/VoterStorage.sol",
         "file": "../storage/VoterStorage.sol",
-        "id": 416,
+        "id": 456,
         "nodeType": "ImportDirective",
-        "scope": 422,
-        "sourceUnit": 581,
+        "scope": 462,
+        "sourceUnit": 639,
         "src": "76:37:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -79,33 +79,33 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 421,
-        "linearizedBaseContracts": [421],
+        "id": 461,
+        "linearizedBaseContracts": [461],
         "name": "StorageState",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 418,
+            "id": 458,
             "name": "candidateStorage",
             "nodeType": "VariableDeclaration",
-            "scope": 421,
+            "scope": 461,
             "src": "143:40:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_CandidateStorage_$519",
+              "typeIdentifier": "t_contract$_CandidateStorage_$577",
               "typeString": "contract CandidateStorage"
             },
             "typeName": {
               "contractScope": null,
-              "id": 417,
+              "id": 457,
               "name": "CandidateStorage",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 519,
+              "referencedDeclaration": 577,
               "src": "143:16:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_CandidateStorage_$519",
+                "typeIdentifier": "t_contract$_CandidateStorage_$577",
                 "typeString": "contract CandidateStorage"
               }
             },
@@ -114,26 +114,26 @@
           },
           {
             "constant": false,
-            "id": 420,
+            "id": 460,
             "name": "voterStorage",
             "nodeType": "VariableDeclaration",
-            "scope": 421,
+            "scope": 461,
             "src": "189:32:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_VoterStorage_$580",
+              "typeIdentifier": "t_contract$_VoterStorage_$638",
               "typeString": "contract VoterStorage"
             },
             "typeName": {
               "contractScope": null,
-              "id": 419,
+              "id": 459,
               "name": "VoterStorage",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 580,
+              "referencedDeclaration": 638,
               "src": "189:12:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_VoterStorage_$580",
+                "typeIdentifier": "t_contract$_VoterStorage_$638",
                 "typeString": "contract VoterStorage"
               }
             },
@@ -141,7 +141,7 @@
             "visibility": "public"
           }
         ],
-        "scope": 422,
+        "scope": 462,
         "src": "115:109:4"
       }
     ],
@@ -150,13 +150,13 @@
   "legacyAST": {
     "absolutePath": "/Users/jedsada/Documents/development/election-smart-contract/contracts/state/StorageState.sol",
     "exportedSymbols": {
-      "StorageState": [421]
+      "StorageState": [461]
     },
-    "id": 422,
+    "id": 462,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 414,
+        "id": 454,
         "literals": ["solidity", ">=", "0.4", ".24", "<", "0.6", ".0"],
         "nodeType": "PragmaDirective",
         "src": "0:32:4"
@@ -164,10 +164,10 @@
       {
         "absolutePath": "/Users/jedsada/Documents/development/election-smart-contract/contracts/storage/CandidateStorage.sol",
         "file": "../storage/CandidateStorage.sol",
-        "id": 415,
+        "id": 455,
         "nodeType": "ImportDirective",
-        "scope": 422,
-        "sourceUnit": 520,
+        "scope": 462,
+        "sourceUnit": 578,
         "src": "34:41:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -175,10 +175,10 @@
       {
         "absolutePath": "/Users/jedsada/Documents/development/election-smart-contract/contracts/storage/VoterStorage.sol",
         "file": "../storage/VoterStorage.sol",
-        "id": 416,
+        "id": 456,
         "nodeType": "ImportDirective",
-        "scope": 422,
-        "sourceUnit": 581,
+        "scope": 462,
+        "sourceUnit": 639,
         "src": "76:37:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -189,33 +189,33 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 421,
-        "linearizedBaseContracts": [421],
+        "id": 461,
+        "linearizedBaseContracts": [461],
         "name": "StorageState",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 418,
+            "id": 458,
             "name": "candidateStorage",
             "nodeType": "VariableDeclaration",
-            "scope": 421,
+            "scope": 461,
             "src": "143:40:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_CandidateStorage_$519",
+              "typeIdentifier": "t_contract$_CandidateStorage_$577",
               "typeString": "contract CandidateStorage"
             },
             "typeName": {
               "contractScope": null,
-              "id": 417,
+              "id": 457,
               "name": "CandidateStorage",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 519,
+              "referencedDeclaration": 577,
               "src": "143:16:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_CandidateStorage_$519",
+                "typeIdentifier": "t_contract$_CandidateStorage_$577",
                 "typeString": "contract CandidateStorage"
               }
             },
@@ -224,26 +224,26 @@
           },
           {
             "constant": false,
-            "id": 420,
+            "id": 460,
             "name": "voterStorage",
             "nodeType": "VariableDeclaration",
-            "scope": 421,
+            "scope": 461,
             "src": "189:32:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_VoterStorage_$580",
+              "typeIdentifier": "t_contract$_VoterStorage_$638",
               "typeString": "contract VoterStorage"
             },
             "typeName": {
               "contractScope": null,
-              "id": 419,
+              "id": 459,
               "name": "VoterStorage",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 580,
+              "referencedDeclaration": 638,
               "src": "189:12:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_VoterStorage_$580",
+                "typeIdentifier": "t_contract$_VoterStorage_$638",
                 "typeString": "contract VoterStorage"
               }
             },
@@ -251,7 +251,7 @@
             "visibility": "public"
           }
         ],
-        "scope": 422,
+        "scope": 462,
         "src": "115:109:4"
       }
     ],
@@ -263,7 +263,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.6",
-  "updatedAt": "2019-05-07T15:46:24.282Z",
+  "updatedAt": "2019-05-09T04:04:15.775Z",
   "devdoc": {
     "methods": {}
   },
