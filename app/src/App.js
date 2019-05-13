@@ -77,14 +77,14 @@ class App extends Component {
         style={{
           width: '100%',
           height: '100%',
-          backgroundColor: 'white'
+          backgroundColor: '#FAFAFA'
         }}
       >
         {this.state.isMetaMask ? (
           <div>
             <div
               style={{
-                marginTop: '36px',
+                paddingTop: '36px',
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center'

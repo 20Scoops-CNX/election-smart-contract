@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-import { Card, List, Button, message, Icon, Tag } from 'antd';
+import { message } from 'antd';
 import styled from 'styled-components';
 import Contract from '../services/Contract';
 import ElectionList from '../components/ElectionList';
-
-const { Meta } = Card;
-
-const { CheckableTag } = Tag;
 
 const Layout = styled.div`
   display: flex;
@@ -152,7 +148,7 @@ class MainPage extends Component {
             </BackgroundSubTitle>
           </div>
           <LayoutTotalVote>
-            <div style={{ width: '60%' }}>
+            <div style={{ width: '50%' }}>
               {/* <CheckableTag checked={true}>
                   <div style={{ padding: '3px', fontSize: '12px' }}>
                     <Icon type="api" /> Network: {this.state.networkName}
@@ -175,7 +171,7 @@ class MainPage extends Component {
                       marginRight: '32px'
                     }}
                   >
-                    99,9999,999
+                    1
                   </Headline>
                   <img src={require('./assets/ic_person_vote.svg')} />
                 </Horizontal>
@@ -199,9 +195,7 @@ class MainPage extends Component {
             </div>
           </LayoutTotalVote>
         </Layout>
-        <div style={{ marginTop: '40px' }}>
-          <ElectionList />
-        </div>
+        <ElectionList />
       </div>
     );
   }

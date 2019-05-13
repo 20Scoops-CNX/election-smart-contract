@@ -9,7 +9,8 @@ const createFontWeightStyle = weight => () => `
 const createFontFamily = (fontFamily, isDefaultFont = true) => () =>
   `font-family: ${fontFamily} ${isDefaultFont ? ', sans-serif' : ''};`;
 
-const createFontFamilyRoboto = (...args) => createFontFamily('Roboto', ...args);
+const createFontFamilyNotoSansThai = (...args) =>
+  createFontFamily("'Noto Sans Thai'", ...args);
 
 const createFontFamilyAnton = (...args) => createFontFamily('Anton', ...args);
 
@@ -44,13 +45,6 @@ const typography = {
     createFontWeightStyle('normal'),
     createLineHeight('26px')
   ),
-  button: createFontStyle(
-    createFontFamilyRoboto(),
-    createFontSizeStyle(14),
-    createFontWeightStyle('bold'),
-    createLineHeight('16px'),
-    createLetterSpacing('0.1em')
-  ),
   caption: createFontStyle(
     createFontFamilyAnton(),
     createFontSizeStyle(14),
@@ -63,6 +57,37 @@ const typography = {
     createFontSizeStyle(8),
     createFontWeightStyle('normal'),
     createLineHeight('11px')
+  ),
+  titleContent: createFontStyle(
+    createFontFamilyNotoSansThai(),
+    createFontSizeStyle(18),
+    createFontWeightStyle('bold'),
+    createLineHeight('21px')
+  ),
+  subTitleContent: createFontStyle(
+    createFontFamilyNotoSansThai(),
+    createFontSizeStyle(12),
+    createFontWeightStyle('normal'),
+    createLineHeight('14px')
+  ),
+  titleSmallContent: createFontStyle(
+    createFontFamilyAnton(),
+    createFontSizeStyle(16),
+    createFontWeightStyle('normal'),
+    createLineHeight('23px')
+  ),
+  textSmallContent: createFontStyle(
+    createFontFamilyAnton(),
+    createFontSizeStyle(12),
+    createFontWeightStyle('normal'),
+    createLineHeight('18px')
+  ),
+  button: createFontStyle(
+    createFontFamilyAnton(),
+    createFontSizeStyle(14),
+    createFontWeightStyle('normal'),
+    createLineHeight('21px'),
+    createLetterSpacing('0.05em')
   )
 };
 
