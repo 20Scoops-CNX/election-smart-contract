@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import { Icon, Tag } from 'antd';
 import './App.css';
 import Routes from './containers/Routes';
 import Contract from './services/Contract';
 
 const { web3 } = window;
-
-const { CheckableTag } = Tag;
 
 class App extends Component {
   state = {
@@ -76,35 +73,23 @@ class App extends Component {
 
   render() {
     return (
-      <div style={{ width: '100%', height: '100%' }}>
+      <div
+        style={{
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'white'
+        }}
+      >
         {this.state.isMetaMask ? (
           <div>
             <div
               style={{
-                height: '46px',
-                background: 'black',
+                marginTop: '36px',
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center'
               }}
-            >
-              <div
-                style={{
-                  height: '56px',
-                  marginLeft: '16px',
-                  color: 'white',
-                  fontSize: '24px',
-                  marginTop: '15px'
-                }}
-              >
-                Election
-              </div>
-              <CheckableTag checked={true}>
-                <div style={{ padding: '3px', fontSize: '12px' }}>
-                  <Icon type="api" /> Network: {this.state.networkName}
-                </div>
-              </CheckableTag>
-            </div>
+            />
             <Routes />
           </div>
         ) : (

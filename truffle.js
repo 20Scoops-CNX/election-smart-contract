@@ -23,7 +23,7 @@ module.exports = {
       host: 'localhost',
       port: 8545,
       network_id: '*',
-      from: '0x5340791a973b9a2261442da715a05dc35d7fc642'
+      from: '0x16b5677349b46db0e6c9b46b592cfe15585156ea'
     },
     production: {
       provider: () => getProvider(process.env.MAINNET_URL),

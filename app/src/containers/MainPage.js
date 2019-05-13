@@ -1,8 +1,84 @@
 import React, { Component } from 'react';
-import { Card, List, Button, message } from 'antd';
+import { Card, List, Button, message, Icon, Tag } from 'antd';
+import styled from 'styled-components';
 import Contract from '../services/Contract';
+import ElectionList from '../components/ElectionList';
 
 const { Meta } = Card;
+
+const { CheckableTag } = Tag;
+
+const Layout = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Headline = styled.h2`
+  letter-spacing: 0.05em;
+  ${({ theme }) => theme.headline()}
+  color: white;
+  text-transform: uppercase;
+  margin: 0;
+`;
+
+const Title = styled.h2`
+  letter-spacing: 0.05em;
+  ${({ theme }) => theme.title()}
+  color: white;
+  text-transform: uppercase;
+  margin: -5px 0px 0px 0px;
+`;
+
+const SubTitle = styled.h2`
+  ${({ theme }) => theme.subTitle()}
+  color: black;
+  text-transform: uppercase;
+  margin: 0;
+`;
+
+const Caption = styled.h2`
+  ${({ theme }) => theme.caption()}
+  color: #2D2A4A;
+  text-transform: uppercase;
+  margin: 0;
+`;
+
+const CaptionSmall = styled.h2`
+  ${({ theme }) => theme.captionSmall()}
+  color: #2D2A4A;
+  margin: 0;
+`;
+
+const BackgroundHeadline = styled.div`
+  background: black;
+  color: white;
+  padding: 9px 105px 9px 165px;
+  clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+`;
+
+const BackgroundSubTitle = styled.div`
+  background: #bdbdbd;
+  width: 82%;
+  padding: 12px 78px 12px 165px;
+  clip-path: polygon(0 0, 100% 0%, 95% 100%, 0% 100%);
+`;
+
+const Divider = styled.div`
+  background: black;
+  height: 5px;
+  margin-top: 10px;
+`;
+
+const LayoutTotalVote = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const Horizontal = styled.div`
+  width: 100%;
+  display: flex;
+`;
 
 class MainPage extends Component {
   state = {
@@ -22,11 +98,11 @@ class MainPage extends Component {
   };
 
   loadData = async () => {
-    const candidates = await this.getAllCandidate();
-    const canVote = await await this.election.methods.checkUserCanVote().call();
-    console.log(candidates);
-    console.log(canVote);
-    this.setState({ candidates, canVote });
+    // const candidates = await this.getAllCandidate();
+    // const canVote = await await this.election.methods.checkUserCanVote().call();
+    // console.log(candidates);
+    // console.log(canVote);
+    // this.setState({ candidates, canVote });
   };
 
   subscribeEvents = () => {
@@ -64,84 +140,68 @@ class MainPage extends Component {
 
   render() {
     return (
-      <div style={{ margin: '16px' }}>
-        <h2>Total Voter: 9,999</h2>
-        <List
-          grid={{
-            gutter: 16,
-            xs: 1,
-            sm: 2,
-            md: 2,
-            lg: 3,
-            xl: 3,
-            xxl: 3
-          }}
-          dataSource={this.state.candidates}
-          renderItem={item => (
-            <List.Item>
-              <Card
-                cover={
-                  <img
-                    style={{
-                      width: 'auto',
-                      height: '280px',
-                      objectFit: 'contain'
-                    }}
-                    alt="candidate"
-                    src={item[4]}
-                  />
-                }
-                actions={[
-                  <div>
-                    <Button
-                      loading={
-                        this.state.btnId === Number(item[0])
-                          ? this.state.isLoading
-                          : false
-                      }
-                      disabled={!this.state.canVote}
-                      type="primary"
-                      style={{ width: '250px' }}
-                      onClick={() => {
-                        this.onClickVote(item);
-                      }}
-                    >
-                      Vote
-                    </Button>
+      <div>
+        <Layout>
+          <div>
+            <BackgroundHeadline>
+              <Headline>blockchain</Headline>
+              <Title>voting system</Title>
+            </BackgroundHeadline>
+            <BackgroundSubTitle>
+              <SubTitle>thailand election 2019</SubTitle>
+            </BackgroundSubTitle>
+          </div>
+          <LayoutTotalVote>
+            <div style={{ width: '60%' }}>
+              {/* <CheckableTag checked={true}>
+                  <div style={{ padding: '3px', fontSize: '12px' }}>
+                    <Icon type="api" /> Network: {this.state.networkName}
                   </div>
-                ]}
+                </CheckableTag> */}
+              <Horizontal
+                style={{ justifyContent: 'center', alignItems: 'flex-end' }}
               >
-                <Meta
-                  avatar={
-                    <div
-                      style={{
-                        overflow: 'hidden',
-                        borderRadius: '40px',
-                        padding: '5px',
-                        boxShadow: '1px 1px 1px gray',
-                        width: '46px',
-                        height: '46px',
-                        border: '1px solid rgba(0,0,0,0.1)'
-                      }}
-                    >
-                      <img
-                        alt="logo"
-                        style={{
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'contain'
-                        }}
-                        src={item[3]}
-                      />
-                    </div>
-                  }
-                  title={item[1]}
-                  description={item[2]}
+                <SubTitle>voted</SubTitle>
+                <Horizontal
+                  style={{
+                    justifyContent: 'center',
+                    alignItems: 'flex-end'
+                  }}
+                >
+                  <Headline
+                    style={{
+                      color: 'black',
+                      lineHeight: '40px',
+                      marginRight: '32px'
+                    }}
+                  >
+                    99,9999,999
+                  </Headline>
+                  <img src={require('./assets/ic_person_vote.svg')} />
+                </Horizontal>
+              </Horizontal>
+              <Divider />
+              <Horizontal style={{ marginTop: '10px', marginLeft: '5px' }}>
+                <div style={{ marginRight: '10px' }}>
+                  <Caption>
+                    11 list of man political parties in thailand
+                  </Caption>
+                  <CaptionSmall style={{ textAlign: 'end' }}>
+                    This website has been developed for educational purposs
+                    only.
+                  </CaptionSmall>
+                </div>
+                <img
+                  style={{ marginTop: '-14px' }}
+                  src={require('./assets/ic_flag_thailand.svg')}
                 />
-              </Card>
-            </List.Item>
-          )}
-        />
+              </Horizontal>
+            </div>
+          </LayoutTotalVote>
+        </Layout>
+        <div style={{ marginTop: '40px' }}>
+          <ElectionList />
+        </div>
       </div>
     );
   }
