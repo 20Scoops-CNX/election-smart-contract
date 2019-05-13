@@ -7,6 +7,21 @@ import ElectionList from '../components/ElectionList';
 const Layout = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  z-index: 100;
+  padding-top: 0px;
+  background-color: rgb(250, 250, 250, 0.8);
+  margin-bottom: 48px;
+  @media screen and (min-width: 995px) {
+    justify-content: space-between;
+    margin-bottom: 0;
+    padding-top: 32px;
+  }
 `;
 
 const Headline = styled.h2`
@@ -57,6 +72,7 @@ const BackgroundSubTitle = styled.div`
   width: 82%;
   padding: 12px 78px 12px 165px;
   clip-path: polygon(0 0, 100% 0%, 95% 100%, 0% 100%);
+  margin-bottom: 20px;
 `;
 
 const Divider = styled.div`
@@ -66,9 +82,12 @@ const Divider = styled.div`
 `;
 
 const LayoutTotalVote = styled.div`
-  width: 100%;
+  width: 475px;
   display: flex;
   justify-content: flex-end;
+  @media screen and (min-width: 995px) {
+    margin-top: -24px;
+  }
 `;
 
 const Horizontal = styled.div`
@@ -148,7 +167,7 @@ class MainPage extends Component {
             </BackgroundSubTitle>
           </div>
           <LayoutTotalVote>
-            <div style={{ width: '50%' }}>
+            <div style={{ width: '100%' }}>
               {/* <CheckableTag checked={true}>
                   <div style={{ padding: '3px', fontSize: '12px' }}>
                     <Icon type="api" /> Network: {this.state.networkName}

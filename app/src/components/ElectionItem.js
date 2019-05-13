@@ -59,6 +59,10 @@ const ImageShadow = styled.img`
 `;
 
 class ElectionItem extends Component {
+  handlerClickVote = e => {
+    console.log('vote');
+  };
+
   render() {
     return (
       <div
@@ -83,13 +87,10 @@ class ElectionItem extends Component {
               height: '100%',
               justifyContent: 'space-between',
               alignItems: 'center',
-              margin: '40px 0px 20px 0px',
               paddingLeft: '16px'
             }}
           >
-            <div
-              style={{ height: '100%', width: '100%', position: 'relative' }}
-            >
+            <div style={{ height: '100%', width: '100%' }}>
               <div
                 style={{
                   position: 'absolute',
@@ -104,7 +105,7 @@ class ElectionItem extends Component {
                 style={{
                   position: 'absolute',
                   bottom: '0',
-                  marginBottom: '14px'
+                  marginBottom: '10px'
                 }}
               >
                 <Percentag>99.99%</Percentag>
@@ -128,7 +129,7 @@ class ElectionItem extends Component {
             </div>
           </div>
         </div>
-        <ButtonVote>
+        <ButtonVote onClick={this.handlerClickVote}>
           <TextButton>Vote</TextButton>
           <img src={require('./assets/ic_vote.svg')} />
         </ButtonVote>
