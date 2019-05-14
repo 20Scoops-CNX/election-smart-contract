@@ -60,10 +60,21 @@ contract('ElectionContract', accounts => {
     assert(false);
   });
 
+  it('account 1 get voted candidate id should be zero', async () => {
+    const candidateId = await app.getVoterVotedCandidate();
+    assert.ok(candidateId);
+    assert.equal(Number(candidateId), 0);
+  });
+
   it('vote Donald Trump from account 1 should be success', async () => {
     const tx = await app.vote(1);
     assert.ok(tx);
     truffleAssert.eventEmitted(tx, 'VoteCandidateEvent');
+  });
+
+  it('account 1 get voted candidate id should be one', async () => {
+    const candidateId = await app.getVoterVotedCandidate();
+    assert.equal(Number(candidateId), 1);
   });
 
   it('account 1 can not vote should be success', async () => {

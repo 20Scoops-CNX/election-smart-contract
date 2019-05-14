@@ -48,7 +48,7 @@ contract ElectionContract is StorageState, Ownable {
     }
 
     function vote(uint _candidateId) public requireVote() requireCandidate(_candidateId) {
-        voterStorage.setUserVote(msg.sender);
+        voterStorage.setUserVote(msg.sender, _candidateId);
         candidateStorage.updateVoteCount(_candidateId);
         (uint id, 
         string memory name,
@@ -70,5 +70,9 @@ contract ElectionContract is StorageState, Ownable {
 
     function checkUserCanVote() public view returns (bool) {
         return !(voterStorage.isUserVoted(msg.sender));
+    }
+
+    function getVoterVotedCandidate() public view returns (uint candidateId) {
+        return voterStorage.getVoterMapCandidate(msg.sender);
     }
 }
