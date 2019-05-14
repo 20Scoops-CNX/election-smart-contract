@@ -192,7 +192,10 @@ class MainPage extends Component {
                   >
                     1
                   </Headline>
-                  <img src={require('./assets/ic_person_vote.svg')} />
+                  <img
+                    alt="counter icon"
+                    src={require('./assets/ic_person_vote.svg')}
+                  />
                 </Horizontal>
               </Horizontal>
               <Divider />
@@ -207,6 +210,7 @@ class MainPage extends Component {
                   </CaptionSmall>
                 </div>
                 <img
+                  alt="thailand flag"
                   style={{ marginTop: '-14px' }}
                   src={require('./assets/ic_flag_thailand.svg')}
                 />

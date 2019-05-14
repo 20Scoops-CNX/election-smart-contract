@@ -111,6 +111,7 @@ class ElectionItem extends Component {
                 <Percentag>99.99%</Percentag>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                   <img
+                    alt="count icon"
                     style={{ marginRight: '4px', marginTop: '1px' }}
                     src={require('./assets/ic_person.svg')}
                   />
@@ -120,6 +121,7 @@ class ElectionItem extends Component {
             </div>
             <div style={{ height: '100%' }}>
               <img
+                alt="candidate"
                 src={require('./assets/ic_candidate.svg')}
                 style={{
                   width: '120px',
@@ -131,7 +133,7 @@ class ElectionItem extends Component {
         </div>
         <ButtonVote onClick={this.handlerClickVote}>
           <TextButton>Vote</TextButton>
-          <img src={require('./assets/ic_vote.svg')} />
+          <img alt="vote icon" src={require('./assets/ic_vote.svg')} />
         </ButtonVote>
       </div>
     );
