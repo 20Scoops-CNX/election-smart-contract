@@ -113,11 +113,11 @@ class MainPage extends Component {
   };
 
   loadData = async () => {
-    // const candidates = await this.getAllCandidate();
-    // const canVote = await await this.election.methods.checkUserCanVote().call();
-    // console.log(candidates);
-    // console.log(canVote);
-    // this.setState({ candidates, canVote });
+    const candidates = await this.getAllCandidate();
+    const canVote = await await this.election.methods.checkUserCanVote().call();
+    console.log(candidates);
+    console.log(canVote);
+    this.setState({ candidates, canVote });
   };
 
   subscribeEvents = () => {
@@ -135,7 +135,7 @@ class MainPage extends Component {
   };
 
   async componentDidMount() {
-    await Contract.setNetwork('1234567');
+    await Contract.setNetwork('4');
     this.election = Contract.Election();
     this.loadData();
     this.subscribeEvents();

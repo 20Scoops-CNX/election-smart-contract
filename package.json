@@ -30,7 +30,9 @@
     "deploy": "yarn lint && node_modules/.bin/truffle migrate",
     "prettier": "prettier --write '**/*.{js,css}'",
     "prettier:check": "prettier --list-different 'src/**/*.{js,css}'",
-    "prettier-changefiles": "yarn lint && pretty-quick --staged"
+    "prettier-changefiles": "yarn lint && pretty-quick --staged",
+    "upgrade-contract": "node ./script/upgrade-contract.js",
+    "init-candidates": "node ./script/init-candidates.js"
   },
   "dependencies": {
     "dotenv": "^7.0.0",

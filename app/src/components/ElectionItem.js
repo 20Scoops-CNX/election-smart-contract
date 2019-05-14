@@ -122,7 +122,7 @@ class ElectionItem extends Component {
             <div style={{ height: '100%' }}>
               <img
                 alt="candidate"
-                src={require('./assets/ic_candidate.svg')}
+                src="http://bit.ly/2HtgLzA"
                 style={{
                   width: '120px',
                   height: '120px'
