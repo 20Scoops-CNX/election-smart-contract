@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { message } from 'antd';
 import styled from 'styled-components';
+import numeral from 'numeral';
 import Contract from '../services/Contract';
 import ElectionList from '../components/ElectionList';
 
@@ -101,7 +102,8 @@ class MainPage extends Component {
     canVote: true,
     isLoading: false,
     totalVoter: 0,
-    btnId: -1
+    btnId: -1,
+    votedCandidateId: -1
   };
 
   getAllCandidate = async () => {
@@ -115,9 +117,26 @@ class MainPage extends Component {
 
   loadData = async () => {
     const candidates = await this.getAllCandidate();
+    // TODO: deploy new contract
+    const newItems = candidates.map(item => {
+      if (item[2] === 'พรรคพลังประชารัฐ') {
+        const logo = item[4];
+        item[4] = item[3];
+        item[3] = logo;
+      }
+      return item;
+    });
     const canVote = await this.election.methods.checkUserCanVote().call();
     const totalVoter = await this.election.methods.getTotalVoter().call();
-    this.setState({ candidates, canVote, totalVoter: Number(totalVoter) });
+    const votedCandidateId = await this.election.methods
+      .getVoterVotedCandidate()
+      .call();
+    this.setState({
+      candidates: newItems,
+      canVote,
+      totalVoter: Number(totalVoter),
+      votedCandidateId: Number(votedCandidateId)
+    });
   };
 
   subscribeEvents = () => {
@@ -141,7 +160,7 @@ class MainPage extends Component {
     this.subscribeEvents();
   }
 
-  onClickVote = async item => {
+  handlerVote = async item => {
     this.setState({ isLoading: true, btnId: Number(item[0]) });
     try {
       const tx = await this.election.methods.vote(Number(item[0])).send();
@@ -168,11 +187,6 @@ class MainPage extends Component {
           </div>
           <LayoutTotalVote>
             <div style={{ width: '100%' }}>
-              {/* <CheckableTag checked={true}>
-                  <div style={{ padding: '3px', fontSize: '12px' }}>
-                    <Icon type="api" /> Network: {this.state.networkName}
-                  </div>
-                </CheckableTag> */}
               <Horizontal
                 style={{ justifyContent: 'center', alignItems: 'flex-end' }}
               >
@@ -190,7 +204,7 @@ class MainPage extends Component {
                       marginRight: '32px'
                     }}
                   >
-                    {this.state.totalVoter}
+                    {numeral(this.state.totalVoter).format('0,0')}
                   </Headline>
                   <img
                     alt="counter icon"
@@ -218,7 +232,12 @@ class MainPage extends Component {
             </div>
           </LayoutTotalVote>
         </Layout>
-        <ElectionList items={this.state.candidates} />
+        <ElectionList
+          items={this.state.candidates}
+          totalVoter={this.state.totalVoter}
+          handlerVote={this.handlerVote}
+          votedCandidateId={this.state.votedCandidateId}
+        />
       </div>
     );
   }

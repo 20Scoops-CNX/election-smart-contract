@@ -60,8 +60,6 @@ export default class Contract {
     );
 
     const addressImpl = await instanceProxy.methods.implementation().call();
-    console.log(`address impl: ${addressImpl.toLowerCase()}`);
-    console.log(`address app: ${appAddress.toLowerCase()}`);
     if (addressImpl.toLowerCase() !== appAddress.toLowerCase()) {
       await instanceProxy.methods
         .upgradeTo(appAddress)

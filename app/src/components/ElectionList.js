@@ -18,10 +18,19 @@ const Layout = styled.div`
 
 class ElectionList extends Component {
   render() {
+    const totalVoter = this.props.totalVoter;
     return (
       <Layout>
         {this.props.items.map(item => {
-          return <ElectionItem item={item} />;
+          return (
+            <ElectionItem
+              item={item}
+              totalVoter={totalVoter}
+              handlerVote={this.props.handlerVote}
+              votedCandidateId={this.props.votedCandidateId}
+              key={Number(item[0])}
+            />
+          );
         })}
       </Layout>
     );

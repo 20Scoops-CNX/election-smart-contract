@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import numeral from 'numeral';
 import FadeImage from './FadeImage';
 
 const TitleContent = styled.h2`
@@ -28,7 +29,6 @@ const Counter = styled.h2`
 
 const TextButton = styled.h2`
   ${({ theme }) => theme.button()}
-  color: white;
   margin: 2px 0px 0px 0px;
   text-transform: uppercase;
 `;
@@ -40,13 +40,12 @@ const ButtonVote = styled.div`
   height: 44px;
   bottom: 0;
   right: 0;
-  background: linear-gradient(90deg, #000000 0%, #383838 100%);
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
   border-radius: 2px;
   justify-content: space-between;
   padding: 12px 16px 12px 16px;
   align-items: center;
   cursor: pointer;
+  user-select: none;
 `;
 
 const ImageShadow = styled(FadeImage)`
@@ -61,16 +60,27 @@ const ImageShadow = styled(FadeImage)`
 `;
 
 class ElectionItem extends Component {
-  handlerClickVote = e => {
-    console.log('vote');
+  handlerClickVote = item => {
+    this.props.handlerVote(item);
   };
 
   render() {
     const item = this.props.item;
-    if (item[2] === 'พรรคพลังประชารัฐ') {
-      const logo = item[4];
-      item[4] = item[3];
-      item[3] = logo;
+    const totalVoter = this.props.totalVoter;
+    const percentage = numeral(Number(item[5]))
+      .divide(totalVoter)
+      .multiply(100)
+      .format('0[.]00');
+    const votedCandidateId = this.props.votedCandidateId;
+    let isShowButtonVote = true;
+    let isVoted = false;
+    if (votedCandidateId === -1) {
+      isShowButtonVote = true;
+    } else if (votedCandidateId > 0 && votedCandidateId === Number(item[0])) {
+      isShowButtonVote = true;
+      isVoted = true;
+    } else {
+      isShowButtonVote = false;
     }
     return (
       <div
@@ -116,7 +126,7 @@ class ElectionItem extends Component {
                   marginBottom: '10px'
                 }}
               >
-                <Percentag>99.99%</Percentag>
+                <Percentag>{`${percentage}%`}</Percentag>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                   <img
                     alt="count icon"
@@ -138,9 +148,27 @@ class ElectionItem extends Component {
             </div>
           </div>
         </div>
-        <ButtonVote onClick={this.handlerClickVote}>
-          <TextButton>Vote</TextButton>
-          <img alt="vote icon" src={require('./assets/ic_vote.svg')} />
+        <ButtonVote
+          style={{
+            display: isShowButtonVote ? 'flex' : 'none',
+            boxShadow: isVoted ? '0px' : '0px 2px 8px rgba(0, 0, 0, 0.25)',
+            background: isVoted
+              ? '#BDBDBD'
+              : 'linear-gradient(90deg, #000000 0%, #383838 100%)'
+          }}
+          onClick={() => {
+            this.handlerClickVote(item);
+          }}
+        >
+          <TextButton style={{ color: isVoted ? '#DEDEDE' : 'white' }}>
+            {isVoted ? 'Voted' : 'Vote'}
+          </TextButton>
+          <img
+            alt="vote icon"
+            src={require(isVoted
+              ? './assets/ic_voted.svg'
+              : './assets/ic_vote.svg')}
+          />
         </ButtonVote>
       </div>
     );
