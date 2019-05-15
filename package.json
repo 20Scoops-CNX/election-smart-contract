@@ -33,7 +33,7 @@
     "prettier-changefiles": "yarn lint && pretty-quick --staged",
     "upgrade-contract": "node ./script/upgrade-contract.js",
     "init-candidates": "node ./script/init-candidates.js",
-    "heroku-postbuild": "cd app && yarn run build"
+    "heroku-postbuild": "cd app && yarn && yarn run build"
   },
   "dependencies": {
     "dotenv": "^7.0.0",
