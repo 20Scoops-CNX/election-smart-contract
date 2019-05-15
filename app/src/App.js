@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
 import Routes from './containers/Routes';
+import styled from 'styled-components';
+import Contract from './services/Contract';
 
 const { web3 } = window;
 
+const LayoutCenter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  user-select: none;
+`;
+
 class App extends Component {
   state = {
-    networkName: 'Loading...',
+    networkName: '',
     networkId: '',
     address: '',
     isMetaMask: false
@@ -66,42 +78,40 @@ class App extends Component {
   };
 
   render() {
+    let isSupportNetwork = false;
+    if (Contract.getSupportedNetworks().indexOf(this.state.networkId) >= 0) {
+      isSupportNetwork = true;
+    }
     return (
       <div
         style={{
-          width: '100%',
-          height: '100%',
+          width: '100vw',
+          height: '100vh',
           backgroundColor: '#FAFAFA'
         }}
       >
         {this.state.isMetaMask ? (
-          <div>
-            <div
-              style={{
-                paddingTop: '36px',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center'
-              }}
-            />
-            <Routes />
-          </div>
+          !this.state.networkName ? (
+            <div />
+          ) : isSupportNetwork ? (
+            <div>
+              <div style={{ paddingTop: '36px' }} />
+              <Routes />
+            </div>
+          ) : (
+            <LayoutCenter>
+              <h1>Not support this network</h1>
+            </LayoutCenter>
+          )
         ) : (
-          <div
-            style={{
-              position: 'absolute',
-              left: '50%',
-              top: '50%',
-              transform: 'translate(-50%, -50%)'
-            }}
-          >
+          <LayoutCenter>
             <img
               style={{ height: '100px', cursor: 'pointer' }}
               src="ic_download_metamask.png"
               alt="icon download metamask"
               onClick={this.onNavigateToInstallMetaMask}
             />
-          </div>
+          </LayoutCenter>
         )}
       </div>
     );
