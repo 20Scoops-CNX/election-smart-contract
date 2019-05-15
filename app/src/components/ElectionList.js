@@ -20,8 +20,8 @@ class ElectionList extends Component {
   render() {
     return (
       <Layout>
-        {Array.from({ length: 12 }, (x, i) => {
-          return <ElectionItem />;
+        {this.props.items.map(item => {
+          return <ElectionItem item={item} />;
         })}
       </Layout>
     );

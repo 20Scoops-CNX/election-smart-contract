@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import FadeImage from './FadeImage';
 
 const TitleContent = styled.h2`
   ${({ theme }) => theme.titleContent()}
@@ -48,7 +49,8 @@ const ButtonVote = styled.div`
   cursor: pointer;
 `;
 
-const ImageShadow = styled.img`
+const ImageShadow = styled(FadeImage)`
+  background-color: white;
   width: 64px;
   height: 64px;
   position: absolute;
@@ -64,6 +66,12 @@ class ElectionItem extends Component {
   };
 
   render() {
+    const item = this.props.item;
+    if (item[2] === 'พรรคพลังประชารัฐ') {
+      const logo = item[4];
+      item[4] = item[3];
+      item[3] = logo;
+    }
     return (
       <div
         style={{
@@ -79,7 +87,7 @@ class ElectionItem extends Component {
             backgroundColor: '#FFFFFF'
           }}
         >
-          <ImageShadow src={require('./assets/ic_test.svg')} />
+          <ImageShadow src={item[3]} preSrc={item[3]} />
           <div
             style={{
               display: 'flex',
@@ -98,8 +106,8 @@ class ElectionItem extends Component {
                   width: '100%'
                 }}
               >
-                <TitleContent>พรรคอนาคตใหม่</TitleContent>
-                <SubTitleContent>นายธนาธร จึงรุ่งเรืองกิจ</SubTitleContent>
+                <TitleContent>{item[2]}</TitleContent>
+                <SubTitleContent>{item[1]}</SubTitleContent>
               </div>
               <div
                 style={{
@@ -115,18 +123,17 @@ class ElectionItem extends Component {
                     style={{ marginRight: '4px', marginTop: '1px' }}
                     src={require('./assets/ic_person.svg')}
                   />
-                  <Counter>123</Counter>
+                  <Counter>{Number(item[5])}</Counter>
                 </div>
               </div>
             </div>
-            <div style={{ height: '100%' }}>
-              <img
+            <div style={{ height: '100%', width: '120px', flexShrink: '0' }}>
+              <FadeImage
                 alt="candidate"
-                src="http://bit.ly/2HtgLzA"
-                style={{
-                  width: '120px',
-                  height: '120px'
-                }}
+                src={item[4]}
+                preSrc={item[4]}
+                imageWidth={120}
+                imageHeight={120}
               />
             </div>
           </div>

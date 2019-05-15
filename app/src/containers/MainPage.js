@@ -100,6 +100,7 @@ class MainPage extends Component {
     candidates: [],
     canVote: true,
     isLoading: false,
+    totalVoter: 0,
     btnId: -1
   };
 
@@ -114,10 +115,9 @@ class MainPage extends Component {
 
   loadData = async () => {
     const candidates = await this.getAllCandidate();
-    const canVote = await await this.election.methods.checkUserCanVote().call();
-    console.log(candidates);
-    console.log(canVote);
-    this.setState({ candidates, canVote });
+    const canVote = await this.election.methods.checkUserCanVote().call();
+    const totalVoter = await this.election.methods.getTotalVoter().call();
+    this.setState({ candidates, canVote, totalVoter: Number(totalVoter) });
   };
 
   subscribeEvents = () => {
@@ -129,7 +129,7 @@ class MainPage extends Component {
           this.loadData();
         }
       } else {
-        // TODO: handler error
+        message.error('Something went wrong!');
       }
     });
   };
@@ -190,7 +190,7 @@ class MainPage extends Component {
                       marginRight: '32px'
                     }}
                   >
-                    1
+                    {this.state.totalVoter}
                   </Headline>
                   <img
                     alt="counter icon"
@@ -218,7 +218,7 @@ class MainPage extends Component {
             </div>
           </LayoutTotalVote>
         </Layout>
-        <ElectionList />
+        <ElectionList items={this.state.candidates} />
       </div>
     );
   }
