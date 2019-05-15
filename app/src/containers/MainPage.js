@@ -5,6 +5,8 @@ import numeral from 'numeral';
 import Contract from '../services/Contract';
 import ElectionList from '../components/ElectionList';
 
+const { web3 } = window;
+
 const Layout = styled.div`
   display: flex;
   align-items: center;
@@ -23,6 +25,7 @@ const Layout = styled.div`
     margin-bottom: 0;
     padding-top: 32px;
   }
+  user-select: none;
 `;
 
 const Headline = styled.h2`
@@ -100,16 +103,16 @@ class MainPage extends Component {
   state = {
     candidates: [],
     canVote: true,
-    isLoading: false,
     totalVoter: 0,
-    btnId: -1,
-    votedCandidateId: -1
+    votedCandidateId: 0,
+    isVoting: false,
+    votingCandidateId: -1
   };
 
   getAllCandidate = async () => {
     const total = await this.election.methods.getTotalCandidate().call();
     return await Promise.all(
-      Array.from({ length: total }, (x, i) => {
+      Array.from({ length: total }, (_, i) => {
         return this.election.methods.getCandidate(i + 1).call();
       })
     );
@@ -145,6 +148,7 @@ class MainPage extends Component {
         if (response.event === 'NewCandidateEvent') {
           this.loadData();
         } else if (response.event === 'VoteCandidateEvent') {
+          message.success(`Vote successfully`);
           this.loadData();
         }
       } else {
@@ -154,6 +158,13 @@ class MainPage extends Component {
   };
 
   async componentDidMount() {
+    web3.eth.getAccounts((err, accounts) => {
+      if (err) {
+        message.error("We can't get acccount wallet!");
+      } else {
+        this.account = accounts[0];
+      }
+    });
     await Contract.setNetwork('4');
     this.election = Contract.Election();
     this.loadData();
@@ -161,15 +172,20 @@ class MainPage extends Component {
   }
 
   handlerVote = async item => {
-    this.setState({ isLoading: true, btnId: Number(item[0]) });
-    try {
-      const tx = await this.election.methods.vote(Number(item[0])).send();
-      message.success(tx.transactionHash);
-      console.log(tx);
-    } catch (err) {
-      message.error(err.message);
+    if (!this.account) {
+      message.warn("We can't get address of your account!");
+      return;
     }
-    this.setState({ isLoading: false, btnId: -1 });
+    this.setState({ isVoting: true, votingCandidateId: Number(item[0]) });
+    try {
+      await this.election.methods
+        .vote(Number(item[0]))
+        .send({ from: this.account });
+    } catch (err) {
+      const errorMessage = err.message.replace('Node error: ', '');
+      message.error(JSON.parse(errorMessage).message);
+    }
+    this.setState({ isVoting: false, votingCandidateId: -1 });
   };
 
   render() {
@@ -235,8 +251,10 @@ class MainPage extends Component {
         <ElectionList
           items={this.state.candidates}
           totalVoter={this.state.totalVoter}
-          handlerVote={this.handlerVote}
+          isVoting={this.state.isVoting}
+          votingCandidateId={this.state.votingCandidateId}
           votedCandidateId={this.state.votedCandidateId}
+          handlerVote={this.handlerVote}
         />
       </div>
     );

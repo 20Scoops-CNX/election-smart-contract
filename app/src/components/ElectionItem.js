@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import 'loaders.css';
+import Loader from 'react-loaders';
 import numeral from 'numeral';
 import FadeImage from './FadeImage';
 
@@ -29,19 +31,29 @@ const Counter = styled.h2`
 
 const TextButton = styled.h2`
   ${({ theme }) => theme.button()}
-  margin: 2px 0px 0px 0px;
+  margin: 0px;
   text-transform: uppercase;
 `;
 
-const ButtonVote = styled.div`
+const LoaderWrapper = styled.div`
+  height: 20px;
+  .loader-inner.ball-pulse div {
+    width: 8px;
+    height: 8px;
+    margin-top: 7px;
+  }
+`;
+
+const ButtonVote = styled.button`
   position: absolute;
   width: 204px;
   display: flex;
+  outline: none;
   height: 44px;
   bottom: 0;
+  border: 0;
   right: 0;
   border-radius: 2px;
-  justify-content: space-between;
   padding: 12px 16px 12px 16px;
   align-items: center;
   cursor: pointer;
@@ -59,12 +71,20 @@ const ImageShadow = styled(FadeImage)`
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
 `;
 
+const LinearLayout = styled.div`
+  width: 100%;
+  justify-content: center;
+  display: flex;
+`;
+
 class ElectionItem extends Component {
   handlerClickVote = item => {
     this.props.handlerVote(item);
   };
 
   render() {
+    const isVoting = this.props.isVoting;
+    const votingCandidateId = this.props.votingCandidateId;
     const item = this.props.item;
     const totalVoter = this.props.totalVoter;
     const percentage = numeral(Number(item[5]))
@@ -74,7 +94,7 @@ class ElectionItem extends Component {
     const votedCandidateId = this.props.votedCandidateId;
     let isShowButtonVote = true;
     let isVoted = false;
-    if (votedCandidateId === -1) {
+    if (votedCandidateId === 0) {
       isShowButtonVote = true;
     } else if (votedCandidateId > 0 && votedCandidateId === Number(item[0])) {
       isShowButtonVote = true;
@@ -82,12 +102,19 @@ class ElectionItem extends Component {
     } else {
       isShowButtonVote = false;
     }
+    let disableVote = isVoted;
+    if (isVoted) {
+      disableVote = true;
+    } else {
+      disableVote = isVoting;
+    }
     return (
       <div
         style={{
           width: '324px',
           height: '164px',
-          position: 'relative'
+          position: 'relative',
+          userSelect: 'none'
         }}
       >
         <div
@@ -137,20 +164,29 @@ class ElectionItem extends Component {
                 </div>
               </div>
             </div>
-            <div style={{ height: '100%', width: '120px', flexShrink: '0' }}>
+            <div
+              style={{
+                height: '100%',
+                width: '120px',
+                flexShrink: '0'
+              }}
+            >
               <FadeImage
+                fit="cover"
                 alt="candidate"
                 src={item[4]}
-                preSrc={item[4]}
+                preSrc={require('./assets/ic_bg.svg')}
                 imageWidth={120}
-                imageHeight={120}
+                imageHeight={isShowButtonVote ? 120 : 164}
               />
             </div>
           </div>
         </div>
         <ButtonVote
+          disabled={disableVote ? true : false}
           style={{
-            display: isShowButtonVote ? 'flex' : 'none',
+            cursor: disableVote ? 'auto' : 'pointer',
+            display: isShowButtonVote ? 'block' : 'none',
             boxShadow: isVoted ? '0px' : '0px 2px 8px rgba(0, 0, 0, 0.25)',
             background: isVoted
               ? '#BDBDBD'
@@ -160,15 +196,37 @@ class ElectionItem extends Component {
             this.handlerClickVote(item);
           }}
         >
-          <TextButton style={{ color: isVoted ? '#DEDEDE' : 'white' }}>
-            {isVoted ? 'Voted' : 'Vote'}
-          </TextButton>
-          <img
-            alt="vote icon"
-            src={require(isVoted
-              ? './assets/ic_voted.svg'
-              : './assets/ic_vote.svg')}
-          />
+          <LinearLayout>
+            <LoaderWrapper
+              style={{
+                display:
+                  isVoting && !isVoted && votingCandidateId === Number(item[0])
+                    ? 'block'
+                    : 'none'
+              }}
+            >
+              <Loader type="ball-pulse" active />
+            </LoaderWrapper>
+            <LinearLayout
+              style={{
+                justifyContent: 'space-between',
+                display:
+                  isVoting && !isVoted && votingCandidateId === Number(item[0])
+                    ? 'none'
+                    : 'flex'
+              }}
+            >
+              <TextButton style={{ color: isVoted ? '#DEDEDE' : 'white' }}>
+                {isVoted ? 'Voted' : 'Vote'}
+              </TextButton>
+              <img
+                alt="vote icon"
+                src={require(isVoted
+                  ? './assets/ic_voted.svg'
+                  : './assets/ic_vote.svg')}
+              />
+            </LinearLayout>
+          </LinearLayout>
         </ButtonVote>
       </div>
     );

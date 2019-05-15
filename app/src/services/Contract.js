@@ -1,7 +1,6 @@
 import * as proxyConfig from '../contracts/App.json';
 import * as electionConfig from '../contracts/ElectionContract.json';
 import Web3 from 'web3';
-import EventBus from 'eventbusjs';
 
 let Election = null;
 let selectedNetwork = null;
@@ -11,25 +10,6 @@ export default class Contract {
   constructor() {
     throw new Error('Do not instantiate!');
   }
-
-  static handlerNetworkIdChange = event => {
-    console.log(event);
-    this.setNetwork(event.target);
-  };
-
-  static registerBus = () => {
-    EventBus.addEventListener(
-      'NetworkIdChangeEvent',
-      this.handlerNetworkIdChange
-    );
-  };
-
-  static unregisterBus = () => {
-    EventBus.removeEventListener(
-      'NetworkIdChangeEvent',
-      this.handlerNetworkIdChange
-    );
-  };
 
   static getSupportedNetworks = () => {
     return supportedNetworks;

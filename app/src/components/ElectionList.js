@@ -26,6 +26,8 @@ class ElectionList extends Component {
             <ElectionItem
               item={item}
               totalVoter={totalVoter}
+              isVoting={this.props.isVoting}
+              votingCandidateId={this.props.votingCandidateId}
               handlerVote={this.props.handlerVote}
               votedCandidateId={this.props.votedCandidateId}
               key={Number(item[0])}
