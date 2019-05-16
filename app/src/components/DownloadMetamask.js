@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import LogoMetamask3D from './LogoMetamask3D';
+import ModelViewer from 'metamask-logo';
 
 const Wrapper = styled.div`
   text-align: center;
@@ -87,12 +87,21 @@ const onNavigateToInstallMetaMask = () => {
 
 class DownloadMetamask extends Component {
   render() {
+    const logoMetamask = ModelViewer({
+      pxNotRatio: true,
+      width: 200,
+      height: 200,
+      followMouse: true,
+      followMotion: true
+    });
     return (
       <div style={{ backgroundColor: '#FAFAFA', padding: '40px 0px 40px 0px' }}>
         <Wrapper>
           <div>
             <div
-              ref={view => (view ? view.appendChild(LogoMetamask3D) : <div />)}
+              ref={view =>
+                view ? view.appendChild(logoMetamask.container) : <div />
+              }
             />
           </div>
           <Title style={{ marginBottom: '36px' }}>
