@@ -94,10 +94,7 @@ class App extends Component {
           !this.state.networkName ? (
             <div />
           ) : isSupportNetwork ? (
-            <div>
-              <div style={{ paddingTop: '36px' }} />
-              <Routes />
-            </div>
+            <Routes />
           ) : (
             <LayoutCenter>
               <h1>Not support this network</h1>

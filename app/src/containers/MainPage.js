@@ -190,7 +190,7 @@ class MainPage extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ paddingTop: '36px' }}>
         <Layout>
           <div>
             <BackgroundHeadline>
