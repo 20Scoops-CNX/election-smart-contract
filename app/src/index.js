@@ -6,11 +6,16 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import typography from './styles/typography';
+import { Route, Switch } from 'react-router-dom';
+import HowtoPage from './containers/HowtoPage';
 
 ReactDOM.render(
   <ThemeProvider theme={typography}>
     <BrowserRouter>
-      <App />
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route exact path="/document" component={HowtoPage} />
+      </Switch>
     </BrowserRouter>
   </ThemeProvider>,
   document.getElementById('root')

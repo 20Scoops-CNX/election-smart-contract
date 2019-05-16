@@ -3,6 +3,7 @@ import './App.css';
 import Routes from './containers/Routes';
 import styled from 'styled-components';
 import Contract from './services/Contract';
+import { Link } from 'react-router-dom';
 
 const { web3 } = window;
 
@@ -108,6 +109,9 @@ class App extends Component {
               alt="icon download metamask"
               onClick={this.onNavigateToInstallMetaMask}
             />
+            <Link to="document" target="_blank" rel="noopener noreferrer">
+              README
+            </Link>
           </LayoutCenter>
         )}
       </div>
