@@ -1,21 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import Routes from './containers/Routes';
-import styled from 'styled-components';
 import Contract from './services/Contract';
 import DownloadMetamask from './components/DownloadMetamask';
+import UnSupportNetwork from './components/UnSupportNetwork';
 
 const { web3 } = window;
-
-const LayoutCenter = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: white;
-  user-select: none;
-`;
 
 class App extends Component {
   state = {
@@ -90,9 +80,7 @@ class App extends Component {
           ) : isSupportNetwork ? (
             <Routes />
           ) : (
-            <LayoutCenter>
-              <h1>Not support this network</h1>
-            </LayoutCenter>
+            <UnSupportNetwork />
           )
         ) : (
           <DownloadMetamask />

@@ -86,10 +86,6 @@ const onNavigateToInstallMetaMask = () => {
 };
 
 class DownloadMetamask extends Component {
-  state = {
-    logo: ''
-  };
-
   render() {
     const logoMetamask = ModelViewer({
       pxNotRatio: true,
@@ -102,7 +98,11 @@ class DownloadMetamask extends Component {
       <div style={{ backgroundColor: '#FAFAFA', padding: '40px 0px 40px 0px' }}>
         <Wrapper>
           <div>
-            <div ref={view => view.appendChild(logoMetamask.container)} />
+            <div
+              ref={view =>
+                view ? view.appendChild(logoMetamask.container) : <div />
+              }
+            />
           </div>
           <Title style={{ marginBottom: '36px' }}>
             required metamask for access
@@ -117,11 +117,11 @@ class DownloadMetamask extends Component {
             <WrapperContent>
               <TitleContent>download metamask</TitleContent>
               <TextCaption>
-                MetaMask นั้นเป็นกระเป๋า Ethereum
-                แบบออนไลน์ที่สามารถใช้งานผ่านเบราว์เซอร์เช่น Google Chrome,
-                Opera และ Firefox รวมถึง Brave
-                และยังเป็นเครื่องมือที่เอาไว้สำหรับผู้ที่ต้องการใช้งาน DApp
-                (Decentralized Application)
+                MetaMask เป็นกระเป๋าเงิน Ethereum แบบออนไลน์
+                ที่สามารถใช้งานผ่านเว็บบราวเซอร์ได้หลากหลาย ไม่ว่าจะเป็น Google
+                Chrome, Opera, Firefox รวมถึง Brave
+                และยังเป็นเครื่องมือที่จำเป็นสำหรับผู้ที่ต้องการใช้งาน DApp หรือ
+                Decentralized Application อีกด้วย
               </TextCaption>
               <ButtonDownload onClick={onNavigateToInstallMetaMask}>
                 <TextButton>download</TextButton>
@@ -131,8 +131,11 @@ class DownloadMetamask extends Component {
               <Space32 />
               <TitleContent>i don't know how to use it</TitleContent>
               <TextCaption>
-                หากคุณต้องการคำอธิบายเพิ่มเติมเกี่ยวกับขั้นตอนการติดตั้ง
-                และวิธีการใช้งานของ MetaMask รวมไปถึงวิธีการใช้งาน DApp นี้
+                หากคุณต้องการคำแนะนำเพิ่มเติมเกี่ยวกับขั้นตอนการติดตั้ง
+                และวิธีการใช้งาน MetaMask Wallet รวมไปถึงวิธีการใช้งาน DApp
+                Blockchain Voting System ของเรา
+                เราได้รวบรวมข้อมูลที่จำเป็นไว้เพื่อคุณ
+                สามารถเข้าไปอ่านรายละเอียดเพิ่มเติมได้จากลิ้งค์ด้านล่างนี้
               </TextCaption>
               <ButtonReadMe>
                 <TextButton>read document</TextButton>
