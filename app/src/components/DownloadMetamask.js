@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import ModelViewer from 'metamask-logo';
+import { detect } from 'detect-browser';
+import { message } from 'antd';
+
+const browser = detect();
 
 const Wrapper = styled.div`
   text-align: center;
@@ -79,10 +83,26 @@ const TitleContent = styled.h2`
 `;
 
 const onNavigateToInstallMetaMask = () => {
-  window.open(
-    'https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn',
-    '_blank'
-  );
+  let url = '';
+  switch (browser && browser.name) {
+    case 'chrome':
+      url =
+        'https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn';
+      break;
+    case 'firefox':
+      url = 'https://addons.mozilla.org/en-US/firefox/addon/ether-metamask';
+      break;
+    case 'opera':
+      url = 'https://addons.opera.com/en/extensions/details/metamask';
+      break;
+    default:
+      console.log('not supported');
+  }
+  if (url) {
+    window.open(`${url}`, '_blank');
+  } else {
+    message.warn('This browser is not supported');
+  }
 };
 
 class DownloadMetamask extends Component {

@@ -4,8 +4,9 @@ import styled from 'styled-components';
 import numeral from 'numeral';
 import Contract from '../services/Contract';
 import ElectionList from '../components/ElectionList';
+import EventBus from 'eventbusjs';
 
-const { web3 } = window;
+const RELOAD_EVENT = 'reload_data_event';
 
 const Layout = styled.div`
   display: flex;
@@ -109,6 +110,11 @@ class MainPage extends Component {
     votingCandidateId: -1
   };
 
+  setupInstance = async () => {
+    await Contract.setNetwork('4');
+    this.election = Contract.Election();
+  };
+
   getAllCandidate = async () => {
     const total = await this.election.methods.getTotalCandidate().call();
     return await Promise.all(
@@ -120,7 +126,7 @@ class MainPage extends Component {
 
   loadData = async () => {
     const candidates = await this.getAllCandidate();
-    // TODO: deploy new contract
+    // TODO: deploy new contract for fixbug
     const newItems = candidates.map(item => {
       if (item[2] === 'พรรคพลังประชารัฐ') {
         const logo = item[4];
@@ -138,7 +144,9 @@ class MainPage extends Component {
       candidates: newItems,
       canVote,
       totalVoter: Number(totalVoter),
-      votedCandidateId: Number(votedCandidateId)
+      votedCandidateId: Number(votedCandidateId),
+      votingCandidateId: -1,
+      isVoting: false
     });
   };
 
@@ -157,33 +165,38 @@ class MainPage extends Component {
     });
   };
 
+  handlerRealodData = async () => {
+    if (this.state.isVoting) return;
+    await this.setupInstance();
+    this.loadData();
+  };
+
   async componentDidMount() {
-    web3.eth.getAccounts((err, accounts) => {
-      if (err) {
-        message.error("We can't get acccount wallet!");
-      } else {
-        this.account = accounts[0];
-      }
-    });
-    await Contract.setNetwork('4');
-    this.election = Contract.Election();
+    EventBus.addEventListener(RELOAD_EVENT, this.handlerRealodData);
+    await this.setupInstance();
     this.loadData();
     this.subscribeEvents();
   }
 
+  componentWillUnmount() {
+    EventBus.removeEventListener(RELOAD_EVENT, this.handlerRealodData);
+  }
+
   handlerVote = async item => {
-    if (!this.account) {
-      message.warn("We can't get address of your account!");
-      return;
-    }
     this.setState({ isVoting: true, votingCandidateId: Number(item[0]) });
     try {
+      const accounts = await window.ethereum.enable();
       await this.election.methods
         .vote(Number(item[0]))
-        .send({ from: this.account });
+        .send({ from: accounts[0] });
     } catch (err) {
+      console.log('call me');
       const errorMessage = err.message.replace('Node error: ', '');
-      message.error(JSON.parse(errorMessage).message);
+      try {
+        message.error(JSON.parse(errorMessage).message);
+      } catch (err) {
+        message.warn("We can't get acccount wallet!");
+      }
     }
     this.setState({ isVoting: false, votingCandidateId: -1 });
   };

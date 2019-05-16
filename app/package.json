@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "antd": "^3.17.0",
+    "detect-browser": "^4.5.0",
+    "eventbusjs": "^0.2.0",
     "express": "^4.16.4",
     "loaders.css": "^0.1.2",
     "metamask-logo": "^2.2.0",
