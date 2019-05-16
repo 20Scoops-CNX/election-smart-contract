@@ -3,7 +3,7 @@ import './App.css';
 import Routes from './containers/Routes';
 import styled from 'styled-components';
 import Contract from './services/Contract';
-import { Link } from 'react-router-dom';
+import DownloadMetamask from './components/DownloadMetamask';
 
 const { web3 } = window;
 
@@ -71,13 +71,6 @@ class App extends Component {
     }
   }
 
-  onNavigateToInstallMetaMask = () => {
-    window.open(
-      'https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn',
-      '_blank'
-    );
-  };
-
   render() {
     let isSupportNetwork = false;
     if (Contract.getSupportedNetworks().indexOf(this.state.networkId) >= 0) {
@@ -102,17 +95,7 @@ class App extends Component {
             </LayoutCenter>
           )
         ) : (
-          <LayoutCenter>
-            <img
-              style={{ height: '100px', cursor: 'pointer' }}
-              src="ic_download_metamask.png"
-              alt="icon download metamask"
-              onClick={this.onNavigateToInstallMetaMask}
-            />
-            <Link to="document" target="_blank" rel="noopener noreferrer">
-              README
-            </Link>
-          </LayoutCenter>
+          <DownloadMetamask />
         )}
       </div>
     );
