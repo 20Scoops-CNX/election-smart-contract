@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import ModelViewer from 'metamask-logo';
+import LogoMetamask3D from './LogoMetamask3D';
 
 const LayoutCenter = styled.div`
   display: flex;
@@ -43,21 +43,12 @@ const Title = styled.h2`
 
 class UnSupportNetwork extends Component {
   render() {
-    const logoMetamask = ModelViewer({
-      pxNotRatio: true,
-      width: 200,
-      height: 200,
-      followMouse: true,
-      followMotion: true
-    });
     return (
       <LayoutCenter>
         <Wrapper>
           <div>
             <div
-              ref={view =>
-                view ? view.appendChild(logoMetamask.container) : <div />
-              }
+              ref={view => (view ? view.appendChild(LogoMetamask3D) : <div />)}
             />
           </div>
           <Title style={{ marginBottom: '20px' }}>change your network</Title>
