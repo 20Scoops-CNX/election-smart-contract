@@ -97,7 +97,7 @@ const onNavigateToInstallMetaMask = () => {
       url = FIREFOX_ETENSION_METAMASK_URL;
       break;
     case 'opera':
-      url = CHROME_ETENSION_METAMASK_URL;
+      url = OPERA_ETENSION_METAMASK_URL;
       break;
     default:
       console.log('not supported');
