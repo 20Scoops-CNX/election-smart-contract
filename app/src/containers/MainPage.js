@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { message } from 'antd';
 import styled from 'styled-components';
-import numeral from 'numeral';
 import Contract from '../services/Contract';
 import ElectionList from '../components/ElectionList';
 import EventBus from 'eventbusjs';
+import CountUp from 'react-countup';
 import { RELOAD_EVENT } from '../constant/Event';
 import { KEY_VOTING } from '../constant/Key';
 
@@ -261,7 +261,12 @@ class MainPage extends Component {
                       marginRight: '32px'
                     }}
                   >
-                    {numeral(this.state.totalVoter).format('0,0')}
+                    <CountUp
+                      className="account-balance"
+                      start={0}
+                      end={this.state.totalVoter}
+                      separator=","
+                    />
                   </Headline>
                   <img
                     alt="counter icon"
