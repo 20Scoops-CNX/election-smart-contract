@@ -6,9 +6,9 @@ import DownloadMetamask from './components/DownloadMetamask';
 import UnSupportNetwork from './components/UnSupportNetwork';
 import { message } from 'antd';
 import EventBus from 'eventbusjs';
+import { RELOAD_EVENT } from './constant/Event';
 
 const { web3 } = window;
-const RELOAD_EVENT = 'reload_data_event';
 
 class App extends Component {
   state = {

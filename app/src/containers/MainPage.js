@@ -5,8 +5,8 @@ import numeral from 'numeral';
 import Contract from '../services/Contract';
 import ElectionList from '../components/ElectionList';
 import EventBus from 'eventbusjs';
-
-const RELOAD_EVENT = 'reload_data_event';
+import { RELOAD_EVENT } from '../constant/Event';
+import { KEY_VOTING } from '../constant/Key';
 
 const Layout = styled.div`
   display: flex;
@@ -124,6 +124,20 @@ class MainPage extends Component {
     );
   };
 
+  setDataUserVoting = candidateId => {
+    localStorage.setItem(
+      KEY_VOTING,
+      JSON.stringify({
+        isVoting: true,
+        candidateId: candidateId
+      })
+    );
+  };
+
+  clearLocalStorage = () => {
+    localStorage.removeItem(KEY_VOTING);
+  };
+
   loadData = async () => {
     const candidates = await this.getAllCandidate();
     // TODO: deploy new contract for fixbug
@@ -140,13 +154,27 @@ class MainPage extends Component {
     const votedCandidateId = await this.election.methods
       .getVoterVotedCandidate()
       .call();
+    let isVoting = false;
+    let votingCandidateId = -1;
+    if (Number(votedCandidateId) === 0) {
+      const jsonStr = localStorage.getItem(KEY_VOTING);
+      if (jsonStr) {
+        const data = JSON.parse(jsonStr);
+        if (data.isVoting) {
+          isVoting = data.isVoting;
+          votingCandidateId = data.candidateId;
+        }
+      }
+    } else {
+      this.clearLocalStorage();
+    }
     this.setState({
       candidates: newItems,
       canVote,
       totalVoter: Number(totalVoter),
       votedCandidateId: Number(votedCandidateId),
-      votingCandidateId: -1,
-      isVoting: false
+      votingCandidateId: votingCandidateId,
+      isVoting: isVoting
     });
   };
 
@@ -186,11 +214,11 @@ class MainPage extends Component {
     this.setState({ isVoting: true, votingCandidateId: Number(item[0]) });
     try {
       const accounts = await window.ethereum.enable();
-      await this.election.methods
-        .vote(Number(item[0]))
-        .send({ from: accounts[0] });
+      const candidateId = Number(item[0]);
+      this.setDataUserVoting(candidateId);
+      await this.election.methods.vote(candidateId).send({ from: accounts[0] });
     } catch (err) {
-      console.log('call me');
+      this.clearLocalStorage();
       const errorMessage = err.message.replace('Node error: ', '');
       try {
         message.error(JSON.parse(errorMessage).message);
