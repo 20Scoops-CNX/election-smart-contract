@@ -4,6 +4,11 @@ import styled from 'styled-components';
 import ModelViewer from 'metamask-logo';
 import { detect } from 'detect-browser';
 import { message } from 'antd';
+import {
+  CHROME_ETENSION_METAMASK_URL,
+  FIREFOX_ETENSION_METAMASK_URL,
+  OPERA_ETENSION_METAMASK_URL
+} from '../constant/Value';
 
 const browser = detect();
 
@@ -86,14 +91,13 @@ const onNavigateToInstallMetaMask = () => {
   let url = '';
   switch (browser && browser.name) {
     case 'chrome':
-      url =
-        'https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn';
+      url = CHROME_ETENSION_METAMASK_URL;
       break;
     case 'firefox':
-      url = 'https://addons.mozilla.org/en-US/firefox/addon/ether-metamask';
+      url = FIREFOX_ETENSION_METAMASK_URL;
       break;
     case 'opera':
-      url = 'https://addons.opera.com/en/extensions/details/metamask';
+      url = CHROME_ETENSION_METAMASK_URL;
       break;
     default:
       console.log('not supported');
