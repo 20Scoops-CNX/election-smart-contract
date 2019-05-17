@@ -106,23 +106,30 @@ const onNavigateToInstallMetaMask = () => {
 };
 
 class DownloadMetamask extends Component {
-  render() {
-    const logoMetamask = ModelViewer({
+  state = {
+    isAddedLogoMetaMask: false
+  };
+
+  addLogoMetaMask = view => {
+    if (this.state.isAddedLogoMetaMask) return;
+    const logoMetaMask = ModelViewer({
       pxNotRatio: true,
       width: 200,
       height: 200,
       followMouse: true,
       followMotion: true
     });
+    view.appendChild(logoMetaMask.container);
+    this.setState({ isAddedLogoMetaMask: true });
+  };
+
+  render() {
+    console.log('call me');
     return (
       <div style={{ backgroundColor: '#FAFAFA', padding: '40px 0px 40px 0px' }}>
         <Wrapper>
           <div>
-            <div
-              ref={view =>
-                view ? view.appendChild(logoMetamask.container) : <div />
-              }
-            />
+            <div ref={view => (view ? this.addLogoMetaMask(view) : <div />)} />
           </div>
           <Title style={{ marginBottom: '36px' }}>
             required metamask for access
