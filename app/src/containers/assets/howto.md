@@ -1,68 +1,66 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **วิธีการติดตั้ง MetaMask Extension **
 
-## Available Scripts
+**ขั้นตอนที่ 1:** ดาวน์โหลด <a href="https://metamask.io" target="_blank" rel="noopener noreferrer">MetaMask</a>
 
-In the project directory, you can run:
+**ขั้นตอนที่ 2:** คลิก “Add to Chrome” เพื่อ Install MetaMask
 
-### `npm start`
+![image-1](./images/image-1.png)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+เมื่อทำการเพิ่ม Matamask เข้า Extension ของ Bowser เสร็จก็จะเจอหน้านี้
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+<img src="../assets/images/image-2.png"/>
 
-### `npm test`
+**ขั้นตอนที่ 3:** ทำการสร้าง Wallet หรือถ้าใครมี Wallet อยู่แล้วก็สามารถ Import
+เข้ามาได้นะครับแต่ในเอกสารชุดนี้จะอธิบายในส่วนของการสร้างใหม่นะครับ ให้คลิกปุ่ม **Create a Wallet**
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Add to chrome](./images/image-3.png)
 
-### `npm run build`
+เมื่อคลิกสร้าง Wallet แล้วจะเจอหน้านี้ให้กด **I agree** นะครับ
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![image-4](./images/image-4.png)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+ต่อไป Matamask จะให้เราทำการสร้าง Password ของ Wallet เรา
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![image-6](./images/image-6.png)
 
-### `npm run eject`
+**ขั้นตอนที่ 4:** ขั้นตอนนี้สำคัญมาก เพราะ Metamask จะสร้างชุดคำมาให้คุณเก็บไว้อย่าเอาให้ใครเป็นอันคาดเพราะถ้าหากใครได้ไปนั้นหมายความคนนั้นก็เป็นเจ้าของ Wallet ของคุณทันที
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**`Not your key Not Your Coin`**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ให่ทำการคลิกตรงกรอบสีแดงเพื่อทำการดูชุดคำ และต้องเก็บรักษาไว้ให้ดี
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![image-7](./images/image-7.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+เมื่อทำการเก็บชุดคำไว้แล้วก็กด ถัดไป จะเจอหน้าให้ Confirm ชุดคำที่ได้
 
-## Learn More
+และเมื่อทำตามขั้นตอนอย่างถูกต้องก็เป็นอันเสร็จสิ้นสำหรับการสร้าง Wallet ด้วย Matamask
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![image-8](./images/image-8.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+เพียงเท่านี้ก็มี Wallet ของสกุลเงินดิจิตอล Ethereum เรียบร้อยแล้ว
 
-### Code Splitting
+![image-9](./images/image-9.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+---
 
-### Analyzing the Bundle Size
+## **ขั้นตอนรับเหรียญ Eth ฟรี เพื่อทดสอบระบบ**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+จากขั้นตอนการสร้าง Wallet ข้างต้นจะสังเกตว่าเรายังไม่มีเหรียญ Eth ซึ่งการที่เราจะใช้งาน DApp (Decentralized Application) บนเครือข่ายของ Ethereum นั้นจำเป็นต้องมีเหรียญ Eth ก่อน
 
-### Making a Progressive Web App
+ซึ่งระบบ Thai Election 2019 ทางผู้พัฒนามีวัตถุประสงค์ที่ต้องเป็นกรณีศึกษาการทำงานของ Smart Contract และเผยแพร่ความรู้ในด้านการใช้งาน DApp (Decentralized Application) เพียงเท่านั้น ดังนั้นระบบจะทำงานอยู่บนเครือข่ายทดสอบที่ชื่อว่า `Ropsten`
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+**ขั้นตอนที่ 1:** จากรูปด้านบนให้เปลี่ยนเครือข่ายจาก `Main Net` เป็น `Ropsten`
 
-### Advanced Configuration
+![image-10](./images/image-10.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+**ขั้นตอนที่ 2:** ให้เข้าไปที่เว็ปไซต์ <a href="https://faucet.metamask.io" target="_blank" rel="noopener noreferrer">faucet.metamask.io</a> เพื่อทำการรับเหรียญ Eth บนเครือข่ายทดสอบที่ชื่อว่า `Ropsten`
 
-### Deployment
+![image-12](./images/image-12.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+โดยให้กดปุ่มสีเขียวจากภาพด้ายบนเพื่อทำการร้องขอเหรียญ Eth จำนวน 1 Eth หลังจากส่งคำขอไปแล้วอาจจะต้องรอสักพัก
 
-### `npm run build` fails to minify
+หลังจากรอมาสักพักเราก็จะได้รับเหรียญ Eth จำนวน 1 Eth บนเครือข่ายทดสอบที่ชื่อว่า `Ropsten` ดังรูปด้านล่าง
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![image-13](./images/image-13.png)
+
+หลังจากรับเหรียญเสร็จเรียบร้อยแล้วก็สามารถเข้าใช้งานระบบ Thai Election 2019 ได้แล้ว ย้ำระบบนี้มีวัตุประสงค์ที่จัดทำขึ้นเพื่อเป็นกรณีศึกษาเกี่ยวกับการทำงานของ Smart Contract และเป็นการเผยแพร่การใช้งาน DApp (Decentralized Application)
