@@ -4,24 +4,39 @@
 
 **ขั้นตอนที่ 2:** คลิก “Add to Chrome” เพื่อ Install MetaMask
 
-![image-1](./images/image-1.png)
+<img width="800" src="https://github.com/T-Jedsada/how-to-install-metamask/blob/master/image-1.png?raw=true"/>
+
+<br />
+<br />
 
 เมื่อทำการเพิ่ม Matamask เข้า Extension ของ Bowser เสร็จก็จะเจอหน้านี้
 
-<img src="../assets/images/image-2.png"/>
+<img width="800" src="https://github.com/T-Jedsada/how-to-install-metamask/blob/master/image-2.png?raw=true"/>
+
+<br />
+<br />
 
 **ขั้นตอนที่ 3:** ทำการสร้าง Wallet หรือถ้าใครมี Wallet อยู่แล้วก็สามารถ Import
 เข้ามาได้นะครับแต่ในเอกสารชุดนี้จะอธิบายในส่วนของการสร้างใหม่นะครับ ให้คลิกปุ่ม **Create a Wallet**
 
-![Add to chrome](./images/image-3.png)
+<img width="800" src="https://github.com/T-Jedsada/how-to-install-metamask/blob/master/image-3.png?raw=true"/>
+
+<br />
+<br />
 
 เมื่อคลิกสร้าง Wallet แล้วจะเจอหน้านี้ให้กด **I agree** นะครับ
 
-![image-4](./images/image-4.png)
+<img width="800" src="https://github.com/T-Jedsada/how-to-install-metamask/blob/master/image-4.png?raw=true"/>
+
+<br />
+<br />
 
 ต่อไป Matamask จะให้เราทำการสร้าง Password ของ Wallet เรา
 
-![image-6](./images/image-6.png)
+<img width="800" src="https://github.com/T-Jedsada/how-to-install-metamask/blob/master/image-6.png?raw=true"/>
+
+<br />
+<br />
 
 **ขั้นตอนที่ 4:** ขั้นตอนนี้สำคัญมาก เพราะ Metamask จะสร้างชุดคำมาให้คุณเก็บไว้อย่าเอาให้ใครเป็นอันคาดเพราะถ้าหากใครได้ไปนั้นหมายความคนนั้นก็เป็นเจ้าของ Wallet ของคุณทันที
 
@@ -29,19 +44,30 @@
 
 ให่ทำการคลิกตรงกรอบสีแดงเพื่อทำการดูชุดคำ และต้องเก็บรักษาไว้ให้ดี
 
-![image-7](./images/image-7.png)
+<img width="800" src="https://github.com/T-Jedsada/how-to-install-metamask/blob/master/image-7.png?raw=true"/>
+
+<br />
+<br />
 
 เมื่อทำการเก็บชุดคำไว้แล้วก็กด ถัดไป จะเจอหน้าให้ Confirm ชุดคำที่ได้
 
 และเมื่อทำตามขั้นตอนอย่างถูกต้องก็เป็นอันเสร็จสิ้นสำหรับการสร้าง Wallet ด้วย Matamask
 
-![image-8](./images/image-8.png)
+<img width="800" src="https://github.com/T-Jedsada/how-to-install-metamask/blob/master/image-8.png?raw=true"/>
+
+<br />
+<br />
 
 เพียงเท่านี้ก็มี Wallet ของสกุลเงินดิจิตอล Ethereum เรียบร้อยแล้ว
 
-![image-9](./images/image-9.png)
+<img width="800" src="https://github.com/T-Jedsada/how-to-install-metamask/blob/master/image-9.png?raw=true"/>
 
----
+<br />
+<br />
+
+<hr/>
+
+<br />
 
 ## **ขั้นตอนรับเหรียญ Eth ฟรี เพื่อทดสอบระบบ**
 
@@ -51,16 +77,25 @@
 
 **ขั้นตอนที่ 1:** จากรูปด้านบนให้เปลี่ยนเครือข่ายจาก `Main Net` เป็น `Ropsten`
 
-![image-10](./images/image-10.png)
+<img width="800" src="https://github.com/T-Jedsada/how-to-install-metamask/blob/master/image-10.png?raw=true"/>
+
+<br />
+<br />
 
 **ขั้นตอนที่ 2:** ให้เข้าไปที่เว็ปไซต์ <a href="https://faucet.metamask.io" target="_blank" rel="noopener noreferrer">faucet.metamask.io</a> เพื่อทำการรับเหรียญ Eth บนเครือข่ายทดสอบที่ชื่อว่า `Ropsten`
 
-![image-12](./images/image-12.png)
+<img width="800" src="https://github.com/T-Jedsada/how-to-install-metamask/blob/master/image-12.png?raw=true"/>
+
+<br />
+<br />
 
 โดยให้กดปุ่มสีเขียวจากภาพด้ายบนเพื่อทำการร้องขอเหรียญ Eth จำนวน 1 Eth หลังจากส่งคำขอไปแล้วอาจจะต้องรอสักพัก
 
 หลังจากรอมาสักพักเราก็จะได้รับเหรียญ Eth จำนวน 1 Eth บนเครือข่ายทดสอบที่ชื่อว่า `Ropsten` ดังรูปด้านล่าง
 
-![image-13](./images/image-13.png)
+<img width="800" src="https://github.com/T-Jedsada/how-to-install-metamask/blob/master/image-13.png?raw=true"/>
+
+<br />
+<br />
 
 หลังจากรับเหรียญเสร็จเรียบร้อยแล้วก็สามารถเข้าใช้งานระบบ Thai Election 2019 ได้แล้ว ย้ำระบบนี้มีวัตุประสงค์ที่จัดทำขึ้นเพื่อเป็นกรณีศึกษาเกี่ยวกับการทำงานของ Smart Contract และเป็นการเผยแพร่การใช้งาน DApp (Decentralized Application)

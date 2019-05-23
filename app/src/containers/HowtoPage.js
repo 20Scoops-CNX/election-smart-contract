@@ -13,8 +13,19 @@ function HowtoPage() {
       });
   }, []);
   return (
-    <div style={{ padding: '16px', backgroundColor: 'white' }}>
-      <ReactMarkdown source={text} escapeHtml={false} />
+    <div
+      style={{
+        width: '800px',
+        margin: '0 auto',
+        padding: '16px',
+        backgroundColor: 'white'
+      }}
+    >
+      <ReactMarkdown
+        className="ReactMarkdown"
+        source={text}
+        escapeHtml={false}
+      />
     </div>
   );
 }
