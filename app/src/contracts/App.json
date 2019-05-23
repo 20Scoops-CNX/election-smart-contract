@@ -2294,18 +2294,6 @@
       "links": {},
       "address": "0x5F81B9525e9f4b1CF3514364eb6a2F454e61ab2e",
       "transactionHash": "0x7ea3bfa55cc5c4bc454553eb10086bb6ed0739682977f68b5bffc44b978078a1"
-    },
-    "4": {
-      "events": {},
-      "links": {},
-      "address": "0xd5510BF3073508D547cdAE0D7CE195d09361334C",
-      "transactionHash": "0x15548bc36c9ee67743f7b6492f40c76d34b1d4c21326308066df595470dd6a04"
-    },
-    "1234567": {
-      "events": {},
-      "links": {},
-      "address": "0x377F4eDEaFe1F0a147D701DFa359E71c824E9d9D",
-      "transactionHash": "0xf02c62f35380af95843e619092933a2c799739b9c405d9d89264f2815686ae0c"
     }
   },
   "schemaVersion": "3.0.6",
