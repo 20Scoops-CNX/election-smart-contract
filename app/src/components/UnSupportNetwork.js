@@ -78,7 +78,7 @@ class UnSupportNetwork extends Component {
               <TextCaption>
                 เกิดข้อผิดพลาด! เนื่องจากระบบไม่รองรับเครือข่ายของ MetaMask
                 ที่คุณเลือกไว้ในขณะนี้ กรุณาเปลี่ยนเครือข่ายของคุณเป็น{' '}
-                <b>‘Rinkeby’</b>
+                <b>‘Ropsten’</b>
                 เพื่อให้รองรับการใช้งานของระบบ
               </TextCaption>
               <div
@@ -92,7 +92,7 @@ class UnSupportNetwork extends Component {
                 <img
                   alt="network"
                   style={{ width: 'auto', height: '100%' }}
-                  src={require('./assets/ic_network.svg')}
+                  src={require('./assets/ic_network_ropsten.svg')}
                 />
               </div>
             </WrapperContent>

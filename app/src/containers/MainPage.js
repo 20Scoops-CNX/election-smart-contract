@@ -111,7 +111,7 @@ class MainPage extends Component {
   };
 
   setupInstance = async () => {
-    await Contract.setNetwork('4');
+    await Contract.setNetwork('3');
     this.election = Contract.Election();
   };
 
@@ -140,15 +140,6 @@ class MainPage extends Component {
 
   loadData = async () => {
     const candidates = await this.getAllCandidate();
-    // TODO: deploy new contract for fixbug
-    const newItems = candidates.map(item => {
-      if (item[2] === 'พรรคพลังประชารัฐ') {
-        const logo = item[4];
-        item[4] = item[3];
-        item[3] = logo;
-      }
-      return item;
-    });
     const canVote = await this.election.methods.checkUserCanVote().call();
     const totalVoter = await this.election.methods.getTotalVoter().call();
     const votedCandidateId = await this.election.methods
@@ -169,7 +160,7 @@ class MainPage extends Component {
       this.clearLocalStorage();
     }
     this.setState({
-      candidates: newItems,
+      candidates: candidates,
       canVote,
       totalVoter: Number(totalVoter),
       votedCandidateId: Number(votedCandidateId),
@@ -231,7 +222,9 @@ class MainPage extends Component {
 
   render() {
     return (
-      <div style={{ paddingTop: '36px' }}>
+      <div
+        style={{ paddingTop: '36px', background: '#FAFAFA', height: '100vh' }}
+      >
         <Layout>
           <div>
             <BackgroundHeadline>

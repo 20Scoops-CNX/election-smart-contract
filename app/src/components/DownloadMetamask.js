@@ -128,7 +128,6 @@ class DownloadMetamask extends Component {
   };
 
   render() {
-    console.log('call me');
     return (
       <div style={{ backgroundColor: '#FAFAFA', padding: '40px 0px 40px 0px' }}>
         <Wrapper>

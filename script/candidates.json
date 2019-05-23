@@ -1,68 +1,68 @@
 [
   {
-    "Name": "นายธนาธร จึงรุ่งเรืองกิจ",
+    "name": "นายธนาธร จึงรุ่งเรืองกิจ",
     "partyName": "พรรคอนาคตใหม่",
-    "logoUrl": "http://bit.ly/2YmUQ3E",
-    "imageUrl": "http://bit.ly/2HtgLzA"
+    "logoUrl": "https://ucarecdn.com/9c74fb1c-7e14-4879-9b82-7a93c3d0265f/futureforward.png",
+    "imageUrl": "https://ucarecdn.com/d8e64de5-a281-4222-bdf2-dd7aee2dc438/thanathornjuangroongruangkit.png"
   },
   {
-    "Name": "คุณหญิงสุดารัตน์ เกยุราพันธุ์",
+    "name": "คุณหญิงสุดารัตน์ เกยุราพันธุ์",
     "partyName": "พรรคเพื่อไทย",
-    "logoUrl": "http://bit.ly/2Vzbosl",
-    "imageUrl": "http://bit.ly/2VorxvA"
+    "logoUrl": "https://ucarecdn.com/36b083a2-0a09-4561-b407-b9ae8e8b77b0/pheuthai.png",
+    "imageUrl": "https://ucarecdn.com/74e6fdfe-43b1-434a-b248-2994c892a16a/sudaratkeyuraphan.png"
   },
   {
-    "Name": "นายอภิสิทธิ์ เวชชาชีวะ",
+    "name": "นายอภิสิทธิ์ เวชชาชีวะ",
     "partyName": "พรรคประชาธิปัตย์",
-    "logoUrl": "http://bit.ly/2Hl3xWM",
-    "imageUrl": "http://bit.ly/2W6E0Zg"
+    "logoUrl": "https://ucarecdn.com/3f48705f-8fc8-48ca-9463-5ced77b632d2/democrat.png",
+    "imageUrl": "https://ucarecdn.com/db69f9cd-a8c1-4e10-ade3-507c0d4c42f6/abhisitvejjajiva.png"
   },
   {
-    "Name": "พล.อ. ประยุทธ์ จันทร์โอชา",
+    "name": "พล.อ. ประยุทธ์ จันทร์โอชา",
     "partyName": "พรรคพลังประชารัฐ",
-    "logoUrl": "http://bit.ly/2LRHxXs",
-    "imageUrl": "http://bit.ly/2JzK9GW"
+    "logoUrl": "https://ucarecdn.com/5fb23430-f212-47ef-a426-78d798f33e1e/pracharatana.png",
+    "imageUrl": "https://ucarecdn.com/1370ad0a-6da8-43ec-b0b5-30f96c873684/prayutchanocha.png"
   },
   {
-    "Name": "นายอนุทิน ชาญวีรกุล",
+    "name": "นายอนุทิน ชาญวีรกุล",
     "partyName": "พรรคภูมิใจไทย",
-    "logoUrl": "http://bit.ly/2VysBlA",
-    "imageUrl": "http://bit.ly/2JGVm8K"
+    "logoUrl": "https://ucarecdn.com/2bef53be-0507-4920-8bd6-517d7b02af77/pridethai.png",
+    "imageUrl": "https://ucarecdn.com/1f2e8af4-f983-4843-9dd8-26f57f03b008/anutincharnviraku.png"
   },
   {
-    "Name": "น.ส. กัญจนา ศิลปอาชา",
+    "name": "น.ส. กัญจนา ศิลปอาชา",
     "partyName": "พรรคชาติไทยพัฒนา",
-    "logoUrl": "http://bit.ly/2VpWeRg",
-    "imageUrl": "http://bit.ly/2vWPDUf"
+    "logoUrl": "https://ucarecdn.com/23ec3758-1f88-45b6-8b52-8bbfa7a8510e/chatthaipattana.png",
+    "imageUrl": "https://ucarecdn.com/800ef5fe-d2e0-47bb-9788-95b7761ae21d/kanchanasilpaarcha.png"
   },
   {
-    "Name": "นายสุวัจน์ ลิปตพัลลภ",
+    "name": "นายสุวัจน์ ลิปตพัลลภ",
     "partyName": "พรรคชาติพัฒนา",
-    "logoUrl": "http://bit.ly/2Eb7J9n",
-    "imageUrl": "http://bit.ly/2W0wnDH"
+    "logoUrl": "https://ucarecdn.com/721c300e-b006-44b1-a20e-cfc03191f6ac/chartpattana.png",
+    "imageUrl": "https://ucarecdn.com/2b8e0bfc-95bc-41d0-846d-4d09420080ee/suwatliptapanlop.png"
   },
   {
-    "Name": "นางนลินี ทวีสิน",
+    "name": "นางนลินี ทวีสิน",
     "partyName": "พรรคเพื่อธรรม",
-    "logoUrl": "http://bit.ly/2VzceFv",
-    "imageUrl": "http://bit.ly/2WHv61v"
+    "logoUrl": "https://ucarecdn.com/c6f5179f-b8a9-4d30-bd0a-8f00a0e6254b/phueadharma.png",
+    "imageUrl": "https://ucarecdn.com/3c023d76-e9e3-43fd-92ac-87ebf9edef9c/nalineetaveesin.png"
   },
   {
-    "Name": "พล.ต.อ. เสรีพิศุทธ์ เตมียเวส",
+    "name": "พล.ต.อ. เสรีพิศุทธ์ เตมียเวส",
     "partyName": "พรรคเสรีรวมไทย",
-    "logoUrl": "http://bit.ly/2VtnBdm",
-    "imageUrl": "http://bit.ly/2JjG765"
+    "logoUrl": "https://ucarecdn.com/238dc3e3-8665-46e0-879e-5a21d57ec58f/liberal.png",
+    "imageUrl": "https://ucarecdn.com/20fb4359-eac3-4c64-b2d3-8791de7cd4ee/seriphisuthithamavees.png"
   },
   {
-    "Name": "นายวันมูหะมัดนอร์ มะทา",
+    "name": "นายวันมูหะมัดนอร์ มะทา",
     "partyName": "พรรคประชาชาติ",
-    "logoUrl": "http://bit.ly/2E9WiyH",
-    "imageUrl": "http://bit.ly/2LFqrw3"
+    "logoUrl": "https://ucarecdn.com/0fce4d78-186c-47ec-823e-3296fdccb8df/national.png",
+    "imageUrl": "https://ucarecdn.com/ea8a1cb6-d5d8-457a-8d75-aaad66b31333/onemuhammadnormata.png"
   },
   {
-    "Name": "นายชัชวาลล์ คงอุดม",
+    "name": "นายชัชวาลล์ คงอุดม",
     "partyName": "พรรคพลังท้องถิ่นไทย",
-    "logoUrl": "http://bit.ly/2JpyRpB",
-    "imageUrl": "http://bit.ly/2E5qDOU"
+    "logoUrl": "https://ucarecdn.com/89bb53e0-d7d8-4603-a977-4ce45d5c9270/localpower.png",
+    "imageUrl": "https://ucarecdn.com/97859424-a5bd-4204-a6a4-9f4960d7b1dd/chatchawankongdomudom.png"
   }
 ]

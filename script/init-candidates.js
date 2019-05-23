@@ -4,7 +4,7 @@ const candidates = require('./candidates.json');
 async function initCandidates() {
   const proxyConfig = require('../app/src/contracts/App.json');
   const electionConfig = require('../app/src/contracts/ElectionContract.json');
-  const proxyAddress = proxyConfig.networks['4'].address;
+  const proxyAddress = proxyConfig.networks['3'].address;
   const electionABI = electionConfig.abi;
   const instanceApp = await new web3.eth.Contract(electionABI, proxyAddress);
   const accounts = await web3.eth.getAccounts();
