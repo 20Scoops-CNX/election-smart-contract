@@ -2,7 +2,7 @@
 
 **ขั้นตอนที่ 1:** ดาวน์โหลด <a href="https://metamask.io" target="_blank" rel="noopener noreferrer">MetaMask</a>
 
-**ขั้นตอนที่ 2:** คลิก “Add to Chrome” เพื่อ Install MetaMask
+**ขั้นตอนที่ 2:** คลิก <b>“Add to Chrome”</b> เพื่อ Install MetaMask
 
 <img width="800" src="https://github.com/T-Jedsada/how-to-install-metamask/blob/master/image-1.png?raw=true"/>
 
@@ -40,18 +40,14 @@
 
 **ขั้นตอนที่ 4:** ขั้นตอนนี้สำคัญมาก เพราะ Metamask จะสร้างชุดคำมาให้คุณเก็บไว้อย่าเอาให้ใครเป็นอันคาดเพราะถ้าหากใครได้ไปนั้นหมายความคนนั้นก็เป็นเจ้าของ Wallet ของคุณทันที
 
-**`Not your key Not Your Coin`**
-
-ให่ทำการคลิกตรงกรอบสีแดงเพื่อทำการดูชุดคำ และต้องเก็บรักษาไว้ให้ดี
+ให้ทำการคลิกตรงกรอบสีแดงเพื่อทำการดูชุดคำ และต้องเก็บรักษาไว้ให้ดี
 
 <img width="800" src="https://github.com/T-Jedsada/how-to-install-metamask/blob/master/image-7.png?raw=true"/>
 
 <br />
 <br />
 
-เมื่อทำการเก็บชุดคำไว้แล้วก็กด ถัดไป จะเจอหน้าให้ Confirm ชุดคำที่ได้
-
-และเมื่อทำตามขั้นตอนอย่างถูกต้องก็เป็นอันเสร็จสิ้นสำหรับการสร้าง Wallet ด้วย Matamask
+เมื่อทำการเก็บชุดคำไว้แล้วก็กด ถัดไป จะเจอหน้าให้ Confirm ชุดคำที่ได้ และเมื่อทำตามขั้นตอนอย่างถูกต้องก็เป็นอันเสร็จสิ้นสำหรับการสร้าง Wallet ด้วย Matamask
 
 <img width="800" src="https://github.com/T-Jedsada/how-to-install-metamask/blob/master/image-8.png?raw=true"/>
 
@@ -75,7 +71,7 @@
 
 ซึ่งระบบ Thai Election 2019 ทางผู้พัฒนามีวัตถุประสงค์ที่ต้องเป็นกรณีศึกษาการทำงานของ Smart Contract และเผยแพร่ความรู้ในด้านการใช้งาน DApp (Decentralized Application) เพียงเท่านั้น ดังนั้นระบบจะทำงานอยู่บนเครือข่ายทดสอบที่ชื่อว่า `Ropsten`
 
-**ขั้นตอนที่ 1:** จากรูปด้านบนให้เปลี่ยนเครือข่ายจาก `Main Net` เป็น `Ropsten`
+**ขั้นตอนที่ 1:** จากรูปด้านบนให้เปลี่ยนเครือข่ายจาก <b>Main Net</b> เป็น <b>Ropsten</b>
 
 <img width="800" src="https://github.com/T-Jedsada/how-to-install-metamask/blob/master/image-10.png?raw=true"/>
 
@@ -89,7 +85,35 @@
 <br />
 <br />
 
-โดยให้กดปุ่มสีเขียวจากภาพด้ายบนเพื่อทำการร้องขอเหรียญ Eth จำนวน 1 Eth หลังจากส่งคำขอไปแล้วอาจจะต้องรอสักพัก
+โดยให้กดปุ่มสีเขียวจากภาพด้ายบนเพื่อทำการร้องขอเหรียญ Eth จำนวน 1 Eth หลังจากส่งคำขอไปแล้วอาจจะต้องรอสักพักให้ระบบทำการโอนเหรียญ Eth มายัง Wellet ของเรา
+
+<b>แต่ถ้าหากขึ้นเหมือนในกรอบสีแดงดังรูปด้านนี้ สาเหตุก็คือเว็ปไซต์ที่เราขอเหรียญ Eth ฟรี เพื่อทำการทดสอบระบบนั้นไม่สมารถเห็น Account Wallet ของเราได้จึงจำเป็นต้องทำการตั้งค่าตามขั้นตอนดังนี้ก่อน</b>
+
+<img width="800" src="https://github.com/T-Jedsada/how-to-install-metamask/blob/master/image-14.png?raw=true"/>
+
+<br />
+<br />
+
+ให้ไปที่การตั้งค่าของ Matamask
+
+<img width="800" src="https://github.com/T-Jedsada/how-to-install-metamask/blob/master/image-15.png?raw=true"/>
+
+<br />
+<br />
+
+แล้วเลือกเมนู Security & Privacy
+
+<img width="800" src="https://github.com/T-Jedsada/how-to-install-metamask/blob/master/image-16.png?raw=true"/>
+
+<br />
+<br />
+
+ต่อไปให้ทำการปิดโหมดความเป็นส่วนตัวออกก่อน เมื่อกดปิดเรียบร้อยแล้วจึงจะสามารถทำการรับเหรียญ Eth ฟรี เพื่อทำการทดสอบระบบได้ (หลังจากรับเหรียญ Eth ฟรี เสร็จแล้วค่อยกลับมาเปิดใหม่เพื่อความปลอดภัยของ Wallet)
+
+<img width="800" src="https://github.com/T-Jedsada/how-to-install-metamask/blob/master/image-17.png?raw=true"/>
+
+<br />
+<br />
 
 หลังจากรอมาสักพักเราก็จะได้รับเหรียญ Eth จำนวน 1 Eth บนเครือข่ายทดสอบที่ชื่อว่า `Ropsten` ดังรูปด้านล่าง
 
@@ -98,4 +122,6 @@
 <br />
 <br />
 
-หลังจากรับเหรียญเสร็จเรียบร้อยแล้วก็สามารถเข้าใช้งานระบบ Thai Election 2019 ได้แล้ว ย้ำระบบนี้มีวัตุประสงค์ที่จัดทำขึ้นเพื่อเป็นกรณีศึกษาเกี่ยวกับการทำงานของ Smart Contract และเป็นการเผยแพร่การใช้งาน DApp (Decentralized Application)
+หลังจากรับเหรียญเสร็จเรียบร้อยแล้วก็สามารถเข้าใช้งานระบบ <a href="https://metamask.io" target="_blank" rel="noopener noreferrer">Thai Election 2019</a> ได้แล้ว
+
+ย้ำระบบนี้มีวัตุประสงค์ที่จัดทำขึ้นเพื่อเป็นกรณีศึกษาเกี่ยวกับการทำงานของ Smart Contract และเป็นการเผยแพร่การใช้งาน DApp (Decentralized Application) และเหรียญ Eth ที่ได้รับฟรีนั้นไม่สามารถแลกกลับมาเป็นเงินจริงได้เพราะอยู่บนเครือข่ายทดสอบ

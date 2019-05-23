@@ -42,3 +42,7 @@
 .ReactMarkdown img {
   width: 100%;
 }
+
+.ReactMarkdown p {
+  font-size: 16px;
+}
