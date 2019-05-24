@@ -5,7 +5,7 @@ const FIREFOX_ETENSION_METAMASK_URL =
 const OPERA_ETENSION_METAMASK_URL =
   'https://addons.opera.com/en/extensions/details/metamask';
 const CONTRACT_ADDRESS_URL =
-  'https://ropsten.etherscan.io/address/0x3704D1A610Fa691f19Dea743fCD052D0F9e026BD';
+  'https://ropsten.etherscan.io/address/0x5F81B9525e9f4b1CF3514364eb6a2F454e61ab2e';
 
 export {
   CHROME_ETENSION_METAMASK_URL,
