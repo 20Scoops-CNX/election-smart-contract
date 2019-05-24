@@ -291,7 +291,7 @@ class MainPage extends Component {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <u>0x3704D1A610Fa691f19Dea743fCD052D0F9e026BD</u>
+                      <u>0x5F81B9525e9f4b1CF3514364eb6a2F454e61ab2e</u>
                     </a>
                   </CaptionSmall>
                 </div>
