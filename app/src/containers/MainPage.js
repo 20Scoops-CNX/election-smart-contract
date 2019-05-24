@@ -7,6 +7,7 @@ import EventBus from 'eventbusjs';
 import CountUp from 'react-countup';
 import { RELOAD_EVENT } from '../constant/Event';
 import { KEY_VOTING } from '../constant/Key';
+import { CONTRACT_ADDRESS_URL } from '../constant/Value';
 
 const Layout = styled.div`
   display: flex;
@@ -63,6 +64,7 @@ const CaptionSmall = styled.h2`
   ${({ theme }) => theme.captionSmall()}
   color: #2D2A4A;
   margin: 0;
+  text-align: end;
 `;
 
 const BackgroundHeadline = styled.div`
@@ -277,9 +279,20 @@ class MainPage extends Component {
                   <Caption>
                     11 list of man political parties in thailand
                   </Caption>
-                  <CaptionSmall style={{ textAlign: 'end' }}>
+                  <CaptionSmall>
                     This website has been developed for educational purposs
                     only.
+                  </CaptionSmall>
+                  <CaptionSmall style={{ marginTop: '2px' }}>
+                    Address:{' '}
+                    <a
+                      style={{ color: '#2D2A4A' }}
+                      href={CONTRACT_ADDRESS_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <u>0x3704D1A610Fa691f19Dea743fCD052D0F9e026BD</u>
+                    </a>
                   </CaptionSmall>
                 </div>
                 <img
