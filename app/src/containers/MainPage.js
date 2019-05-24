@@ -223,7 +223,11 @@ class MainPage extends Component {
   render() {
     return (
       <div
-        style={{ paddingTop: '36px', background: '#FAFAFA', height: '100vh' }}
+        style={{
+          paddingTop: '36px',
+          background: '#FAFAFA',
+          minHeight: '100vh'
+        }}
       >
         <Layout>
           <div>
