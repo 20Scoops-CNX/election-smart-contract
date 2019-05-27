@@ -8,6 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import typography from './styles/typography';
 import { Route, Switch } from 'react-router-dom';
 import HowtoPage from './containers/HowtoPage';
+import ReferencePage from './containers/ReferencePage';
 
 ReactDOM.render(
   <ThemeProvider theme={typography}>
@@ -15,6 +16,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/" component={App} />
         <Route exact path="/document" component={HowtoPage} />
+        <Route exact path="/references" component={ReferencePage} />
       </Switch>
     </BrowserRouter>
   </ThemeProvider>,

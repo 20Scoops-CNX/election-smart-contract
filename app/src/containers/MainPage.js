@@ -8,6 +8,7 @@ import CountUp from 'react-countup';
 import { RELOAD_EVENT } from '../constant/Event';
 import { KEY_VOTING } from '../constant/Key';
 import { CONTRACT_ADDRESS_URL } from '../constant/Value';
+import FooterView from '../components/FooterView';
 
 const Layout = styled.div`
   display: flex;
@@ -70,6 +71,8 @@ const CaptionSmall = styled.h2`
 const BackgroundHeadline = styled.div`
   background: black;
   color: white;
+  display: flex;
+  position: relative;
   padding: 9px 105px 9px 165px;
   clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
 `;
@@ -227,7 +230,7 @@ class MainPage extends Component {
       <div
         style={{
           paddingTop: '36px',
-          paddingBottom: '30px',
+          paddingBottom: '24px',
           background: '#FAFAFA',
           minHeight: '100vh'
         }}
@@ -235,8 +238,24 @@ class MainPage extends Component {
         <Layout>
           <div>
             <BackgroundHeadline>
-              <Headline>blockchain</Headline>
-              <Title>voting system</Title>
+              <img
+                alt="app icon"
+                width="96px"
+                height="96px"
+                style={{
+                  position: 'absolute',
+                  left: '0px',
+                  marginTop: '12px',
+                  marginLeft: '46px'
+                }}
+                src={require('./assets/ic_app.png')}
+              />
+              <div style={{ display: 'flex' }}>
+                <div>
+                  <Headline>blockchain</Headline>
+                  <Title>voting system</Title>
+                </div>
+              </div>
             </BackgroundHeadline>
             <BackgroundSubTitle>
               <SubTitle>thailand election 2019</SubTitle>
@@ -313,23 +332,7 @@ class MainPage extends Component {
           votedCandidateId={this.state.votedCandidateId}
           handlerVote={this.handlerVote}
         />
-        {this.state.candidates.length > 0 ? (
-          <CaptionSmall
-            style={{ textAlign: 'center', fontSize: '12px', marginTop: '50px' }}
-          >
-            ที่มา:{' '}
-            <a
-              style={{ color: '#2D2A4A' }}
-              href="https://www.bbc.com/thai/thailand-47086016"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <u>https://www.bbc.com/thai/thailand-47086016</u>
-            </a>
-          </CaptionSmall>
-        ) : (
-          <div />
-        )}
+        {this.state.candidates.length > 0 ? <FooterView /> : <div />}
       </div>
     );
   }

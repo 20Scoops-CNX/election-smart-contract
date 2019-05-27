@@ -58,6 +58,18 @@ const typography = {
     createFontWeightStyle('normal'),
     createLineHeight('11px')
   ),
+  textFooter: createFontStyle(
+    createFontFamilyNotoSansThai(),
+    createFontSizeStyle(12),
+    createFontWeightStyle('normal'),
+    createLineHeight('16px')
+  ),
+  textFooterEng: createFontStyle(
+    createFontFamilyNotoSans(),
+    createFontSizeStyle(12),
+    createFontWeightStyle('normal'),
+    createLineHeight('16px')
+  ),
   titleContent: createFontStyle(
     createFontFamilyNotoSansThai(),
     createFontSizeStyle(18),
