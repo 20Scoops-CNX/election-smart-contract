@@ -177,7 +177,7 @@ class MainPage extends Component {
         if (response.event === 'NewCandidateEvent') {
           this.loadData();
         } else if (response.event === 'VoteCandidateEvent') {
-          message.success(`Vote successfully`);
+          message.success('New transaction for voted');
           this.loadData();
         }
       } else {
