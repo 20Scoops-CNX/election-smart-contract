@@ -227,6 +227,7 @@ class MainPage extends Component {
       <div
         style={{
           paddingTop: '36px',
+          paddingBottom: '30px',
           background: '#FAFAFA',
           minHeight: '100vh'
         }}
@@ -312,6 +313,23 @@ class MainPage extends Component {
           votedCandidateId={this.state.votedCandidateId}
           handlerVote={this.handlerVote}
         />
+        {this.state.candidates.length > 0 ? (
+          <CaptionSmall
+            style={{ textAlign: 'center', fontSize: '12px', marginTop: '50px' }}
+          >
+            ที่มา:{' '}
+            <a
+              style={{ color: '#2D2A4A' }}
+              href="https://www.bbc.com/thai/thailand-47086016"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <u>https://www.bbc.com/thai/thailand-47086016</u>
+            </a>
+          </CaptionSmall>
+        ) : (
+          <div />
+        )}
       </div>
     );
   }
